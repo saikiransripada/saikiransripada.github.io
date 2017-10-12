@@ -1,0 +1,67 @@
+# Config
+
+# Site settings
+title: Sai Kiran Sripada
+desc: This blog is a timeline of my life. I blog to document my ideas, research and personal feelings for future reference.
+url: http://kiran.im/
+baseurl: ''
+permalink: /:title/
+emoji_logo: true
+
+# Meta settings
+email: mail@kiran.im
+author: Sai Kiran Sripada
+twitter_username: wp_user
+github_username: serialization
+github_source: jackal
+
+# Put your ga tracking code below
+google_analytics: 'UA-XXXXXXXX-X'
+
+# Pagination settings
+paginate: 5                           # number of posts to show per page
+paginate_path: "/page:num/"  # link scheme for articles, should be letf as is
+
+# Navigation settings
+# Used to define the navigation menu items
+# > Title is the tile of the navigation item, url the url and desc is the tooltip
+navigation:
+  - title: About
+    url: /about/
+    desc: About
+  - title: Projects
+    url: /projects/
+    desc: Projects
+  - title: Contact
+    url: /contact/
+    desc: Contact
+  - title: Donate
+    url: /donate/
+    desc: Donate
+
+# Used by Jekyll to recognize what is a post and what is a page
+defaults:
+  -
+    scope:
+      path: ''
+      type: posts
+    values:
+      layout: post
+
+# Markdown parser settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+  parse_block_html: true
+
+# Build settings
+include:
+  - _pages                  # all your pages can be put inside pages (except articles)
+exclude:
+  - README.md
+  - vendor
+gems:
+  - jekyll-paginate
+
