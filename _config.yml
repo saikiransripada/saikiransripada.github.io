@@ -6,7 +6,6 @@ desc: This blog is a timeline of my life. I blog to document my ideas, research 
 url: http://kiran.im/
 baseurl: ''
 permalink: /:title/
-emoji_logo: true
 
 # Meta settings
 email: mail@kiran.im
@@ -26,6 +25,9 @@ paginate_path: "/page:num/"  # link scheme for articles, should be letf as is
 # Used to define the navigation menu items
 # > Title is the tile of the navigation item, url the url and desc is the tooltip
 navigation:
+  - title: Home
+    url: /
+    desc: Home
   - title: About
     url: /about/
     desc: About

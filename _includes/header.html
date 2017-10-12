@@ -1,11 +1,5 @@
 <header class="site-header">
 
-  {% if site.emoji_logo %}
-  <h1 class="site-title">
-    <a href="{{ site.baseurl }}/" title="Home page"><div class="site-logo"></div></a>
-  </h1>
-  {% endif %}
-
   <nav class="site-nav">
     {% for link in site.navigation %}
       {% assign current = nil %}
