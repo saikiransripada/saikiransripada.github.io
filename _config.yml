@@ -1,33 +1,29 @@
-# Config
+# The main config file for your Jekyll template
 
 # Site settings
-title: Sai Kiran Sripada
+title: Sai Kiran Sripada   # used for the html title of every page
 desc: This blog is a timeline of my life. I blog to document my ideas, research and personal feelings for future reference.
-url: http://kiran.im/
-baseurl: ''
-permalink: /:title/
+url: http://kiran.im/      # put your website hosting url here
+baseurl: ''                # the subpath of your site, e.g. /blog
+permalink: /:title/        # how should we display posts url
 
 # Meta settings
 email: mail@kiran.im
 author: Sai Kiran Sripada
 twitter_username: wp_user
 github_username: serialization
-github_source: jackal
 
 # Put your ga tracking code below
-google_analytics: 'UA-XXXXXXXX-X'
+google_analytics: 'UA-67531538-2'
 
 # Pagination settings
-paginate: 5                           # number of posts to show per page
+paginate: 5                  # number of posts to show per page
 paginate_path: "/page:num/"  # link scheme for articles, should be letf as is
 
 # Navigation settings
 # Used to define the navigation menu items
 # > Title is the tile of the navigation item, url the url and desc is the tooltip
 navigation:
-  - title: Home
-    url: /
-    desc: Home
   - title: About
     url: /about/
     desc: About
@@ -52,7 +48,6 @@ defaults:
 
 # Markdown parser settings
 markdown: kramdown
-highlighter: rouge
 kramdown:
   input: GFM
   hard_wrap: false
