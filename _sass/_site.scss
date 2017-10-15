@@ -63,7 +63,7 @@
 
 @include mq-up(sm) {
   .site-header {
-    margin: $spacer4 0 $spacer4;
+    margin: $spacer4 0 $spacer2;
   }
 
   .site-title {
@@ -191,6 +191,7 @@
 }
 
 // Misc
+
 ol.pager {
   list-style-type: none;
   padding: 0;

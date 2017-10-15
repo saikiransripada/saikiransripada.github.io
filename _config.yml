@@ -1,11 +1,13 @@
 # The main config file for your Jekyll template
 
 # Site settings
-title: Sai Kiran Sripada   # used for the html title of every page
-desc: This blog is a timeline of my life. I blog to document my ideas, research and personal feelings for future reference.
-url: http://kiran.im/      # put your website hosting url here
-baseurl: ''                # the subpath of your site, e.g. /blog
-permalink: /:title/        # how should we display posts url
+title: Sai Kiran Sripada
+desc: >
+  This blog is a timeline of my life. I blog to document my ideas, research and personal feelings for future reference.
+
+url: http://kiran.im
+baseurl: ''
+permalink: /:title/
 
 # Meta settings
 email: mail@kiran.im
@@ -13,31 +15,29 @@ author: Sai Kiran Sripada
 twitter_username: wp_user
 github_username: serialization
 
-# Put your ga tracking code below
+# Optional settings
 google_analytics: 'UA-67531538-2'
 
 # Pagination settings
-paginate: 5                  # number of posts to show per page
-paginate_path: "/page:num/"  # link scheme for articles, should be letf as is
+paginate: 5
+paginate_path: "/blog/page:num/"
 
 # Navigation settings
-# Used to define the navigation menu items
-# > Title is the tile of the navigation item, url the url and desc is the tooltip
 navigation:
-  - title: About
-    url: /about/
-    desc: About
+  - title: Blog
+    url: /blog/
+    desc: Some weird ramblings I occasionally publish and instantly forget
   - title: Projects
     url: /projects/
-    desc: Projects
+    desc: Projects that I have built in my spare time and that I am proud to showcase
+  - title: About
+    url: /about/
+    desc: Learn about me, my hobbies and some other cool things
   - title: Contact
     url: /contact/
     desc: Contact
-  - title: Donate
-    url: /donate/
-    desc: Donate
 
-# Used by Jekyll to recognize what is a post and what is a page
+# Front Matter settings
 defaults:
   -
     scope:
@@ -55,7 +55,7 @@ kramdown:
 
 # Build settings
 include:
-  - _pages                  # all your pages can be put inside pages (except articles)
+  - _pages
 exclude:
   - README.md
   - vendor
