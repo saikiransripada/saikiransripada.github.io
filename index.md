@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="lead pretty-links">
-  Hi! I'm **Sai Kiran Sripada**, a [full-stack developer](about/), musicophile and <span class="select-hide">not so</span> talented gamer. I work as a nexus between development and backend, making websites scalable and fast.
+  I'm **Sai Kiran Sripada**, a [polyglot programmer](about/), musicophile and <span class="select-hide">not so</span> talented gamer. I love writing code, participating in Hackathons, and contributing to Open Source projects.
 
   I like to experiment and build [cool things](projects/) in my spare time.
 
