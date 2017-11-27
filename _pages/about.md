@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-subtitle: I am a full-stack developer.
+subtitle: I am a full-stack developer. <img src="/assets/img/grinning.emoji.svg" class="emoji" />
 desc: Learn about me, my hobbies and some other cool things.
 permalink: /about/
 ---
