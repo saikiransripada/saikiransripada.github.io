@@ -9,3 +9,5 @@ layout: default
 
   I'm <span class="select-hide">crazy</span> passionate about my craft, always looking out for original ideas and *new things*.
 </div>
+
+<div id="listening-to"></div>

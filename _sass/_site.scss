@@ -191,11 +191,20 @@
 }
 
 // Misc
+#listening-to {
+  margin-top: 3em;
+}
 
 .emoji {
   width: 1em;
   height: 1em;
   vertical-align: bottom;
+}
+
+.emoji-big {
+  width: 1.75em;
+  height: 1.75em;
+  vertical-align: top;
 }
 
 ol.pager {
