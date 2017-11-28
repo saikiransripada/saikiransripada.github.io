@@ -1,4 +1,4 @@
-  var url = 'https://ws.audioscrobbler.com/2.0?method=user.getRecentTracks&user=thephpguy&limit=1&api_key=6e7c0a29cd508f42a6737e5fd3d6110b&format=json';
+  var url = 'https://ws.audioscrobbler.com/2.0?method=user.getRecentTracks&user=thephpguy&limit=1&api_key=c614552cd7d82790915fc72f629b9ebe&format=json';
   var getJSON = function(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
