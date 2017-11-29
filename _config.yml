@@ -46,6 +46,10 @@ defaults:
     values:
       layout: post
 
+# Compress CSS
+sass:
+  style: compressed
+
 # Markdown parser settings
 markdown: kramdown
 kramdown:
@@ -61,4 +65,3 @@ exclude:
   - vendor
 gems:
   - jekyll-paginate
-
