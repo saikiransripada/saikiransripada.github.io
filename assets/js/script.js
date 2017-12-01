@@ -1,4 +1,4 @@
-var url = 'https://ws.audioscrobbler.com/2.0?method=user.getRecentTracks&user=thephpguy&limit=1&api_key=c614552cd7d82790915fc72f629b9ebe&format=json';
+var url = 'https://ws.audioscrobbler.com/2.0?method=user.getRecentTracks&user=thephpguy&limit=2&api_key=c614552cd7d82790915fc72f629b9ebe&format=json';
 var getJSON = function(url, callback) {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', url, true);
@@ -72,6 +72,7 @@ getJSON(url,
     } else {
       var nowplaying = '';
       var info = data.recenttracks.track[0];
+      var recent = data.recenttracks.track[1];
       var track = info.name;
       var artist = info.artist["#text"];
       var album = info.album["#text"];
@@ -86,14 +87,9 @@ getJSON(url,
       else
           nowplaying += ' <small>' + timeAgo(info.date['uts']) + '</small></li>';
 
-      if (data.recenttracks.track[1]) {
-        recenttrack = data.recenttracks.track[1];
-        nowplaying += headphones + '<em><strong>' + recenttrack.name + '</strong> by <strong>' + recenttrack.artist['#text'] + '</strong></em>';
-        nowplaying += ' <small>' + timeAgo(recenttrack.date['uts']) + '</small></li>';
-      } else {
-        nowplaying += '<li>&nbsp;</li>';
-      }
+      nowplaying += headphones + '<em><strong>' + recent.name + '</strong> by <strong>' + recent.artist['#text'] + '</strong></em>';
+      nowplaying += ' <small>' + timeAgo(recent.date['uts']) + '</small></li>';
 
-      document.getElementById('listening-to').innerHTML = nowplaying;
+      document.getElementById('tracklist').innerHTML = nowplaying;
     }
   });

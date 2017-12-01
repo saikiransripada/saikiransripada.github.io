@@ -203,13 +203,17 @@
   vertical-align: top;
 }
 
-#listening-to {
-  margin-top: 3em;
+#tracklist {
+  margin: 3em 0 0;
   padding: 0;
 }
 
-#listening-to li {
+#tracklist li {
   margin-bottom: 0.5em;
+}
+
+#tracklist li:last-child {
+  margin-bottom: 0;
 }
 
 ul.fade {
