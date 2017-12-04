@@ -11,3 +11,4 @@ layout: default
 </div>
 
 <ul id="tracklist" class="fade"></ul>
+<p><small class="cool"><em>Cool eh? More [projects](projects/)...</em></small></p>
