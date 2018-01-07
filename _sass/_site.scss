@@ -230,7 +230,7 @@ ul.fade:after {
   pointer-events: none;
   background-image: linear-gradient(to bottom, rgba(250, 250, 248, 0), rgba(250, 250, 248, 1) 90%);
   width: 100%;
-  height: 1.5em;
+  height: 2.5em;
 }
 
 ol.pager {
@@ -254,6 +254,8 @@ li.pager-next {
 
 .cool {
   font-size: 0.65em;
+  font-style: italic;
   text-align: right;
   display: block;
+  margin-top: 1em;
 }
