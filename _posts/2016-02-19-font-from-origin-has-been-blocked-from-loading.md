@@ -25,5 +25,5 @@ Header add Access-Control-Allow-Origin "your-domain.com"
 When `add` is used, the response header will be added to the existing set of headers; Whereas with `set` the response header will be set, replacing any header with this name.
 
 ## Source
-* <a href="http://stackoverflow.com/a/26521650" target="_blank">http://stackoverflow.com/a/26521650</a>
-* <a href="http://stackoverflow.com/a/28236969" target="_blank">http://stackoverflow.com/a/28236969</a>
+* [http://stackoverflow.com/a/26521650](http://stackoverflow.com/a/26521650){:target="_blank"}
+* [http://stackoverflow.com/a/28236969](http://stackoverflow.com/a/28236969){:target="_blank"}

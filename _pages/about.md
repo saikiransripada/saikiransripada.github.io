@@ -13,7 +13,7 @@ permalink: /about/
 
 I'm a {{ 'now' | date: '%Y' | minus: 1990 }}-year-old software engineer based in Hyderabad, India. I love writing code, listening to music and playing games on the computer.
 
-When I'm not sleeping, you'll find me <a href="https://last.fm/user/thephpguy" target="_blank">*listening to music*</a> or <a href="https://steamcommunity.com/id/cybercriminal" target="_blank">*playing games*</a> or <a href="/projects">*coding an interesting project*</a>.
+When I'm not sleeping, you'll find me [*listening to music*](https://last.fm/user/thephpguy){:target="_blank"} or [*playing games*](https://steamcommunity.com/id/cybercriminal){:target="_blank"} or [*coding an interesting project*](/projects){:rel="nofollow"}.
 
 I love gaming of all sorts, computers and programming languages.
 
