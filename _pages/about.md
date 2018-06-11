@@ -8,7 +8,7 @@ permalink: /about/
 
 <div class="pretty-links">
 
-<div class="lead lead-about">For the past **6+ years** I've been coding mostly in *PHP* and *JavaScript*.
+<div class="lead lead-about">For the past **6+ years** I've been coding mostly in *PHP*, *Python* and *JavaScript*.
 </div>
 
 I'm a {{ 'now' | date: '%Y' | minus: 1990 }}-year-old software engineer based in Hyderabad, India. I love writing code, listening to music and playing games on the computer.
