@@ -17,6 +17,7 @@ github_username: serialization
 
 # Optional settings
 google_analytics: 'UA-67531538-2'
+comments: true
 
 # Pagination settings
 paginate: 5
