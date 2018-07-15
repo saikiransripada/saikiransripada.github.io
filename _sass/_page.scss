@@ -102,7 +102,12 @@
   font-family: $font-heading;
   color: $text-muted;
   margin: -$spacer0 0 $spacer;
-  font-size: .875rem;
+  font-size: $fs;
+  font-weight: 800;
+}
+
+.categories-list {
+  text-transform: capitalize;
 }
 
 // Reset the responsive content

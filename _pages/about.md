@@ -17,5 +17,7 @@ When I'm not sleeping, you'll find me [*listening to music*](https://last.fm/use
 
 I love gaming of all sorts, computers and programming languages.
 
+---
+
 This blog is a timeline of my life. I blog to document my ideas, research and personal feelings for future reference.
 </div>
