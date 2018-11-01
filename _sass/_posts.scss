@@ -36,9 +36,9 @@
 .meta,
 .post-meta {
   width: auto;
-  font-family: $heading-font-family;
-  font-size: $h6;
-  font-weight: 300;
+  font-family: $font-family;
+  font-size: $small;
+  font-weight: 400;
   margin: 0;
   padding: .25em 0;
   color: #7a7a7a;
@@ -46,4 +46,9 @@
 
 .related-post-title {
   border-bottom: thin solid #f3f3f3;
+}
+
+.post-summary {
+  font-size: $p;
+  line-height: 1.8;
 }

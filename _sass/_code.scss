@@ -1,3 +1,7 @@
+figure {
+  margin: 0;
+}
+
 pre,
 pre code {
   background-color: transparent;
@@ -7,10 +11,12 @@ pre code {
 pre,
 code {
   font-family: $monospace-font-family;
+  font-size: $h6;
+  padding: $space-5 $space-6;
 }
 
 code {
-  color: #7a7a7a;
+  color: #444;
 }
 
 pre {

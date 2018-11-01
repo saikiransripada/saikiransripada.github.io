@@ -16,14 +16,15 @@ h6 {
   font-weight: $heading-font-weight;
   line-height: $heading-line-height;
   margin-top: 1em;
-  margin-bottom: .3em;
+  margin-bottom: 0;
 }
 
 p,
 dl,
 ol,
 ul {
-  font-size: $h4;
+  font-size: $p;
+  font-weight: $button-font-weight;
   margin-top: 0;
   margin-bottom: $space-2;
 }
@@ -31,6 +32,7 @@ ul {
 ol,
 ul {
   padding-left: $space-3;
+  line-height: 1.8;
 }
 
 pre,
@@ -52,8 +54,8 @@ hr {
 }
 
 blockquote {
-  margin-top: $space-3;
-  margin-bottom: $space-3;
+  margin-top: 0;
+  margin-bottom: 0;
   margin-left: 0;
   padding-left: $space-2;
   padding-right: $space-2;
@@ -61,7 +63,7 @@ blockquote {
 
 blockquote,
 blockquote p {
-  font-size: $h3;
+  font-size: $h5;
   font-style: italic;
 }
 

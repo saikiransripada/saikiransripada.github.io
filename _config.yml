@@ -1,6 +1,6 @@
 # Site settings
 title:       Sai Kiran Sripada
-email:       mail@kiran.im
+email:       your_email@example.com
 author:      John Otander
 description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
 baseurl:     ""
@@ -51,7 +51,7 @@ facebook_appid:
 facebook_comments_number: 10
 
 # Social icons
-github_username:
+github_username: serialization
 reddit_username:
 bitbucket_username:
 stackoverflow_id:
