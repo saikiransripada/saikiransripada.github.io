@@ -1,0 +1,28 @@
+.button-black {
+  color: #7a7a7a;
+  background-color: transparent;
+  border-radius: $border-radius;
+  border-color: #7a7a7a;
+  font-size: $small;
+  padding: $space-7 $space-2;
+  text-transform: uppercase;
+  transition-duration: .1s;
+  transition-timing-function: ease-out;
+  transition-property: box-shadow, background-color;
+}
+
+.button-black:hover,
+.button-black:active,
+.button-black.is-active {
+  color: #333;
+  border-color: #333;
+}
+
+.button-black:focus {
+  outline: none;
+}
+
+.button-black:disabled,
+.button-black.is-disabled {
+  opacity: .5;
+}

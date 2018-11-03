@@ -1,14 +1,14 @@
 # Site settings
 title:       Sai Kiran Sripada
-email:       your_email@example.com
-author:      John Otander
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+email:       mail@kiran.im
+author:      Sai Kiran Sripada
+description: "This blog is a timeline of my life. A blog to document my ideas, research and personal feelings for future reference."
 baseurl:     ""
-url:         "http://pixyll.com"
+url:         "https://www.kiran.im"
 date_format: "%b %-d, %Y"
 header_pages:
+ - projects.md
  - about.md
- - contact.html
 
 # Google services
 google_verification:
@@ -54,10 +54,10 @@ facebook_comments_number: 10
 github_username: serialization
 reddit_username:
 bitbucket_username:
-stackoverflow_id:
-twitter_username:
+stackoverflow_id: 848932
+twitter_username: wp_user
 skype_username:
-steam_nickname:
+steam_nickname: thecybercriminal
 google_plus_id:
 linkedin_username:
 angellist_username:
