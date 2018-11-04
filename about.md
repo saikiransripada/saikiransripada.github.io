@@ -5,7 +5,7 @@ permalink: /about/
 tags: about
 ---
 
-I'm a {{ 'now' | date: '%Y' | minus: 1990 }}-year-old software engineer based in Hyderabad, India. For the past **6+ years** I've been coding mostly in *PHP*, *Python* and *JavaScript*. I love writing code, listening to music and playing games on the computer.
+I'm a {{ 'now' | date: '%Y' | minus: 1990 }}-year-old software engineer based in Hyderabad, India. For the past **{{ 'now' | date: '%Y' | minus: 2011 }}+ years** I've been coding mostly in *PHP*, *Python* and *JavaScript*. I love writing code, listening to music and playing games on the computer.
 
 ---
 

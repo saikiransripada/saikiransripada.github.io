@@ -129,23 +129,6 @@ To configure txtpen, set up a [txtpen site](https://txtpen.com/go) with the same
 
 All variables can be found in the `_sass/_variables.scss` file, toggle these as you'd like to change the look and feel of Pixyll.
 
-### Page Animation
-
-If you would like to add a [fade-in-down effect](http://daneden.github.io/animate.css/), you can add `animated: true` to your `_config.yml`.
-
-### AnchorJS
-
-[AnchorJS](https://github.com/bryanbraun/anchorjs): _A JavaScript utility for adding deep anchor links to existing page content. AnchorJS is lightweight, accessible, and has no dependencies._ You can turn it on by toggling `enable_anchorjs`. Because it offers many ways for customization, tweaks should be done in `_includes/footer.html`. Default settings after turning AnchorJS on are:
-
-```html
-<script>
-    anchors.options.visible = 'always';
-    anchors.add('article h2, article h3, article h4, article h5, article h6');
-</script>
-```
-
-See [documentation](http://bryanbraun.github.io/anchorjs/#basic-usage) for more options.
-
 ### Put in a Pixyll Plug
 
 If you want to give credit to the Pixyll theme with a link to <http://pixyll.com> or my personal website <http://johnotander.com> somewhere, that'd be awesome. No worries if you don't.
@@ -203,14 +186,6 @@ git pull upstream master
 ```
 
 There may be merge conflicts, so be sure to fix the files that git lists if they occur. That's it!
-
-## Thanks to the following
-
-* [BASSCSS](http://basscss.com)
-* [Jekyll](http://jekyllrb.com)
-* [Refills](http://refills.bourbon.io/)
-* [Solarized](http://ethanschoonover.com/solarized)
-* [Animate.css](http://daneden.github.io/animate.css/)
 
 ## Contributing
 
