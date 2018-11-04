@@ -1,15 +1,27 @@
 blockquote {
-  border-left: 5px solid #7a7a7a;
+  font-family: $quote-font-family;
   font-style: italic;
-  margin-left: $space-1;
-  padding: $space-1;
+  margin: 0 0 $space-2;
+  padding: $p $space-3;
+  position: relative;
+  line-height: 0.8;
+}
+
+blockquote::before {
+  content: "\201C";
+  font-size: $h0;
+  font-weight: bold;
+  color: #999;
+  position: absolute;
+  left: 10px;
+  top: 5px;
 }
 
 blockquote footer {
   background-color: #fff;
   border-color: transparent;
   color: #7a7a7a;
-  font-size: .85rem;
+  font-size: $p;
   font-style: normal;
   text-align: left;
   margin-top: $space-2;
