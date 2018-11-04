@@ -5,4 +5,4 @@ permalink: /projects/
 tags: projects
 ---
 
-Coming soon
+{{ site.text.index.coming_soon }}

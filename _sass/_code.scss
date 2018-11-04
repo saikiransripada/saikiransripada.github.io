@@ -16,7 +16,8 @@ code {
 }
 
 code {
-  color: #444;
+  background-color: #272822;
+  color: #efd;
 }
 
 pre {
@@ -25,11 +26,6 @@ pre {
   overflow-x: scroll;
   margin-bottom: 0.88em;
   background-color: $pre-background-color;
-}
-
-.highlight .p {
-  font-size: 1.125rem;
-  line-height: 1;
 }
 
 pre {
