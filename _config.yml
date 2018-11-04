@@ -21,7 +21,6 @@ bing_verification:
 
 # Optional features
 show_related_posts:   false
-show_social_icons:    false
 enable_mathjax: false
 # Preview image for social media aka og:image and twitter:image
 post_preview_image: false
@@ -39,39 +38,10 @@ disqus_shortname:
 # (leave blank to disable txtpen)
 txtpen_sitename:
 
-# Social icons
-github_username: serialization
-reddit_username:
-bitbucket_username:
-stackoverflow_id: 848932
-twitter_username: wp_user
-skype_username:
-steam_nickname: thecybercriminal
-google_plus_id:
-linkedin_username:
-angellist_username:
-medium_id:
-bitcoin_url:
-paypal_url:
-flattr_button:
-telegram_username:
-vk_id:
-
 text:
   pagination:
     newer: 'Newer'
     older: 'Older'
-  share_buttons:
-    text:         'Share this post!'
-    facebook:     'Share on Facebook'
-    twitter:      'Share on Twitter'
-    googleplus:   'Share on Google+'
-    linkedin:     'Share on LinkedIn'
-    digg:         'Share on Digg'
-    tumblr:       'Share on Tumblr'
-    reddit:       'Share on Reddit'
-    stumbleupon:  'Share on StumbleUpon'
-    hackernews:   'Share on Hacker News'
   post:
     updated:        'Updated'
     minute_read:    'minute read'
