@@ -13,4 +13,4 @@ This blog is a timeline of my life. I blog to document my ideas, research and pe
 
 All opinions are my own.
 
-If you'd like to get in touch, please send an email to mail@kiran.im. If you'd like to talk securely, my PGP key is available on Keybase.
+If you'd like to get in touch, please send an email to [mail@kiran.im](mailto:mail@kiran.im). If you'd like to talk securely, my PGP key is available on [Keybase](https://keybase.io/saikiransripada){:target="_blank"}.
