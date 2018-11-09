@@ -21,8 +21,6 @@ bing_verification:
 # Optional features
 show_related_posts:   false
 enable_mathjax: false
-# Preview image for social media aka og:image and twitter:image
-post_preview_image: false
 
 # Facebook Page integration
 # (for instant articles and other stuff)
