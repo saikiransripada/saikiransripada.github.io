@@ -3,7 +3,7 @@ title:       Sai Kiran Sripada
 author:      Sai Kiran Sripada
 description: "This blog is a timeline of my life. A blog to document my ideas, research and personal feelings for future reference."
 baseurl:     ""
-url:         "https://www.kiran.im"
+url:         "https://www.saikiransripada.com"
 date_format: "%b %-d, %Y"
 header_pages:
  - projects.md
