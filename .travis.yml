@@ -1,7 +1,0 @@
-language: ruby
-rvm:
-  - 2.1
-
-script:
-  # Build and test
-  - jekyll build
