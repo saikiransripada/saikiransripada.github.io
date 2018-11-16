@@ -9,31 +9,18 @@ header_pages:
  - projects.md
  - about.md
 
-# Google services
-google_verification:
 # Use either direct GA implementation or set up GTM account
 # - using both will skew your data (leave blank to not use at all)
 google_analytics:
 google_tag_manager:
-# Bing services
-bing_verification:
 
 # Optional features
 show_related_posts:   false
 enable_mathjax: false
 
-# Facebook Page integration
-# (for instant articles and other stuff)
-fb_page: false
-fb_page_id:
-
 # Disqus post comments
 # (leave blank to disable Disqus)
 disqus_shortname:
-
-# txtpen post comments
-# (leave blank to disable txtpen)
-txtpen_sitename:
 
 text:
   pagination:
@@ -58,7 +45,7 @@ sass:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-# https://github.com/jekyll/jekyll/issues/2938
+
 exclude:
   - Gemfile
   - Gemfile.lock
