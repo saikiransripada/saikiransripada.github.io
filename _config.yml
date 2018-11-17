@@ -9,10 +9,7 @@ header_pages:
  - projects.md
  - about.md
 
-# Use either direct GA implementation or set up GTM account
-# - using both will skew your data (leave blank to not use at all)
 google_analytics:
-google_tag_manager:
 
 # Optional features
 show_related_posts:   false
