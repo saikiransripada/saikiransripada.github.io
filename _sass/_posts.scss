@@ -44,7 +44,24 @@
 }
 
 .related-post-title {
-  border-bottom: thin solid #f3f3f3;
+  margin-top: $space-3;
+  margin-bottom: $space-1;
+}
+
+.related-posts {
+  p {
+    font-size: .8rem;
+    margin-bottom: $space-6;
+
+    a {
+      color: #3a3a3a;
+      background-image: none;
+      margin-right: $space-1;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .post-summary {

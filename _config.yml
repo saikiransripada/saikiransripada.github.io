@@ -12,7 +12,7 @@ header_pages:
 google_analytics:
 
 # Optional features
-show_related_posts:   false
+show_related_posts: true
 enable_mathjax: false
 
 # Disqus post comments
