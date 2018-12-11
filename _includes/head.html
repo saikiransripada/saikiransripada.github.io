@@ -3,7 +3,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{% if page.title %}{{ page.title | strip_html }} - {% endif %}{{ site.title | strip_html }}{% if page.url == "/" %} - Software Engineer{% endif %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{% if page.meta_description %}{{ page.meta_description | xml_escape }}{% elsif page.summary %}{{ page.summary | xml_escape }}{% elsif page.layout == 'post' %}{{ page.content | newline_to_br | strip_newlines | replace: '<br />', ' ' | strip_html | strip | truncatewords: 50 }}{% else %}{{ site.description | xml_escape }}{% endif %}">
+    <meta name="description" content="{% if page.meta_description %}{{ page.meta_description | xml_escape }}{% elsif page.summary %}{{ page.summary | xml_escape }}{% else %}{{ site.description | xml_escape }}{% endif %}">
     {% if page.meta_robots %}<meta name="robots" content="{{ page.meta_robots }}">
     {% else %}<meta name="robots" content="all">{% endif %}
     <meta name="author" content="{{ site.author }}">
