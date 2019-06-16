@@ -1,49 +1,33 @@
-# Site settings
-title:       Sai Kiran Sripada
-author:      Sai Kiran Sripada
-description: "This blog is a timeline of my life. A blog to document my ideas, research and personal feelings for future reference."
-baseurl:     ""
-url:         "https://www.saikiransripada.com"
+baseurl: ""
+url: "http://localhost:4000"
+title: "Sai Kiran Sripada"
+
+# This is used by feed.xml. Uncomment if you want to use it.
+# description: "..."
+
 date_format: "%b %-d, %Y"
-header_pages:
- - projects.md
- - about.md
 
-google_analytics:
-
-# Optional features
-show_related_posts: true
-enable_mathjax: false
-
-# Disqus post comments
-# (leave blank to disable Disqus)
-disqus_shortname:
-
-text:
-  pagination:
-    newer: 'Newer'
-    older: 'Older'
-  post:
-    updated:        'Updated'
-    minute_read:    'minute read'
-    related_posts:  'Related Posts'
-  index:
-    coming_soon: 'Coming soon...'
-  og_locale: 'en_US'
-
-# Build settings
-markdown:     kramdown
-redcarpet:
-  extensions: ['smart', 'tables', 'with_toc_data']
-permalink:    /:title/
-paginate:     4
+markdown: kramdown
 sass:
   style: compressed
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-
+gems:
+  - jemoji
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - vendor
+  - "README.md"
+  - "CNAME"
+  - "Gemfile"
+  - "Gemfile.lock"
+permalink: :title
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

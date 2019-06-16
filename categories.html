@@ -1,0 +1,19 @@
+---
+title: Categories
+---
+<div class="post-header">
+  <h1 class="post-title-main">Categories</h1>
+</div>
+<div class="page-archive">
+{% assign categories = site.categories | sort %}
+{% for category in categories %}
+  {% capture category_name %}{{ category | first }}{% endcapture %}
+  <h3 class="section-header-archive">{{ category_name }}</h3>
+
+  {% for post in site.categories[category_name] %}
+  <p>
+    <a href="{{ post.url | prepend:site.baseurl}}" class="post-title-archive">{{ post.title }}</a>
+  </p>
+  {% endfor %}
+{% endfor %}
+</div>
