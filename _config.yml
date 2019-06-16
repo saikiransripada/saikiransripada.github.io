@@ -10,7 +10,7 @@ date_format: "%b %-d, %Y"
 markdown: kramdown
 sass:
   style: compressed
-gems:
+plugins:
   - jemoji
 exclude:
   - "README.md"
