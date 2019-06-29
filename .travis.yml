@@ -16,3 +16,5 @@ deploy:
   keep-history: true
   on:
     branch: dev
+after_deploy:
+  - cp CNAME ./_site/CNAME
