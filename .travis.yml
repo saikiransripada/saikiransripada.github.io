@@ -5,6 +5,7 @@ branches:
   - dev
 script:
   - JEKYLL_ENV=production bundle exec jekyll build --destination _site
+  - cp CNAME ./_site/CNAME
 deploy:
   provider: pages
   local-dir: ./_site
@@ -16,5 +17,3 @@ deploy:
   keep-history: true
   on:
     branch: dev
-after_deploy:
-  - cp CNAME ./_site/CNAME
