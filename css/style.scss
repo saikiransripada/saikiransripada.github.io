@@ -105,7 +105,7 @@ ul {
   margin-top: 0;
 }
 .section-header-archive ~ .section-header-archive {
-  margin-top: $space-md;
+  margin-top: 30px;
 }
 
 .post-header,
@@ -151,6 +151,12 @@ ul {
 .post-title-main {
   margin: 0;
   font-size: 2.4rem;
+}
+.post-title-list {
+  font-family: $headings-font-family;
+  font-weight: $content-font-weight;
+  margin-top: 0;
+  margin-bottom: 30px;
 }
 .post-title-archive {
   font-family: $headings-font-family;

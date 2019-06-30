@@ -17,7 +17,7 @@ layout: default
         <div class="col-sm-12 col-md-6 post-nav pull-left">
           {% if page.next %}
           <h3 class="section-header">
-            <a href="{{ page.next.url | prepend:site.baseurl }}" class="btn btn-primary btn-sm">&laquo; Newer Entries</a>
+            <a href="{{ page.next.url | prepend:site.baseurl }}">&laquo; Newer</a>
           </h3>
           {% endif %}
         </div>
@@ -25,7 +25,7 @@ layout: default
         <div class="col-sm-12 col-md-6 post-nav pull-right text-right">
           {% if page.previous %}
           <h3 class="section-header">
-            <a href="{{ page.previous.url | prepend:site.baseurl }}" class="btn btn-primary btn-sm">Older Entries &raquo;</a>
+            <a href="{{ page.previous.url | prepend:site.baseurl }}">Older &raquo;</a>
           </h3>
           {% endif %}
         </div>

@@ -1,10 +1,8 @@
 <div class="post-meta">
     <div class="text-muted pull-left">
-        {{ page.date | date: site.date_format }}
-    </div>
-    <a href="{{ page.categories }}">
-        <div class="badge badge-primary pull-right">
+        {{ page.date | date: site.date_format }} |
+        <a href="{{ page.categories }}">
             {{ page.categories }}
-        </div>
-    </a>
+        </a>
+    </div>
 </div>
