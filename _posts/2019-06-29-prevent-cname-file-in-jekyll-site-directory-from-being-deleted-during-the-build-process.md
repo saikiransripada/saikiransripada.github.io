@@ -1,20 +1,19 @@
 ---
-layout:         post
-title:          Prevent CNAME file in Jekyll _site directory from being deleted during the build process
-date:           2019-06-29
-categories:     jekyll
+layout:     post
+title:      Prevent CNAME file in Jekyll _site directory from being deleted during the build process
+date:       2019-06-29
+categories: jekyll
 ---
 
-If you are using Jekyll, the `_site` folder gets deleted and rebuilt after every change or Jekyll build execution. If you are using a custom domain, you may have to copy the CNAME file after a Jekyll build.
+In Jekyll, the `_site` folder gets deleted and rebuilt after every change or build execution. If you have a custom domain, you may have to copy the CNAME file after every Jekyll build.
 
-You can use `keep_files` option in your `_config.yml` to prevent CNAME file in the `_site` directory from being deleted during the build process.
+You can use `keep_files` option in `_config.yml` to prevent CNAME file in the `_site` directory from being deleted during the build process.
 
 {% highlight yaml %}
 keep_files: ['CNAME']
-{% highlight yaml %}
+{% endhighlight %}
 
 If you are using Travis CI, you can copy the CNAME file to the `_site` directory after the build process. Here's a sample `.travis.yml` configuration that you can use:
-
 {% highlight yaml %}
 language: ruby
 cache: bundler
@@ -35,4 +34,4 @@ deploy:
   keep-history: true
   on:
     branch: dev
-{% highlight yaml %}
+{% endhighlight %}
