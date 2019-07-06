@@ -129,17 +129,23 @@ ul {
   .badge-primary {
     font-family: $headings-font-family;
     font-size: 11px;
-    background-color: $dark-brand-primary;
-    border: 1px solid #405973;
+    color: #555;
+    background-color: transparent;
+    border: 1px solid #0d1116;
     letter-spacing: .5px;
     text-transform: uppercase;
     padding: 5px 10px;
     border-radius: 3px;
-    
+  }
+  .badge-primary:hover {
+    text-decoration: underline;
   }
   a {
     text-transform: uppercase;
     font-weight: 500;
+  }
+  .no-underline:hover {
+    text-decoration: none;
   }
 }
 .post-title-home {
