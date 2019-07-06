@@ -3,6 +3,7 @@ layout:     post
 title:      Font from origin has been blocked from loading by Cross-Origin Resource Sharing policy
 date:       2016-02-19
 categories: apache
+description: Custom web fonts via CDN requires CORS (Cross-Origin Resource Sharing) configuration to display fonts properly.
 ---
 
 Custom web fonts via CDN requires CORS (Cross-Origin Resource Sharing) configuration to display fonts properly.
