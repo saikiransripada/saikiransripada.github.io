@@ -4,6 +4,5 @@
 
 # Thanks to the following:
 
-* [Pixyll](http://pixyll.com)
-* [BASSCSS](http://basscss.com)
+* [shiori](https://github.com/ellekasai/shiori)
 * [Jekyll](http://jekyllrb.com)

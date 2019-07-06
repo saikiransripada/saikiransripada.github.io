@@ -3,7 +3,7 @@ url: "https://www.saikiransripada.com/"
 title: "Sai Kiran Sripada"
 
 # This is used by feed.xml. Uncomment if you want to use it.
-# description: "..."
+description: "A full-stack developer based in India, currently focusing on Python, Node.js, React, Vue.js and Ruby Technologies."
 
 date_format: "%b %-d, %Y"
 

@@ -100,6 +100,9 @@ ul {
 
 .section-header {
   margin-top: 0;
+  a {
+    font-weight: 500;
+  }
 }
 .section-header-archive {
   margin-top: 0;
@@ -134,8 +137,9 @@ ul {
     border-radius: 3px;
     
   }
-  a:hover {
-    text-decoration: none;
+  a {
+    text-transform: uppercase;
+    font-weight: 500;
   }
 }
 .post-title-home {
