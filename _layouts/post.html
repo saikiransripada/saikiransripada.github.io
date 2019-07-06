@@ -9,6 +9,9 @@ layout: default
 <div class="post-content">
   {{ content }}
 </div>
+<div class="post-footer-meta">
+  {% include post-share.html %}
+</div>
 <div class="post-footer">
   {% if site.data.theme.show_post_navs %}
     {% if page.previous or page.next %}

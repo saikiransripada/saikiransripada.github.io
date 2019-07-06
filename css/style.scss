@@ -148,6 +148,10 @@ ul {
     text-decoration: none;
   }
 }
+.post-footer-meta {
+  font-size: 13px;
+  margin-bottom: 15px;
+}
 .post-title-home {
   margin: 0;
   font-size: 2.4rem;
@@ -205,7 +209,8 @@ ul {
 .navbar-brand {
   font-weight: $headings-font-weight;
 }
-.navbar {
+.navbar,
+.post-footer-meta {
   font-family: $headings-font-family;
 }
 .navbar-static-top {
