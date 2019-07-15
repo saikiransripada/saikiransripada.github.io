@@ -1,11 +1,13 @@
 ---
 layout: page
 title: About
-description: An experienced full-stack application developer, producing high quality web applications.
-permalink: /about/
+summary: An experienced full-stack application developer, producing high quality web applications.
+tags: about
 ---
 
-I'm a {{ 'now' | date: '%Y' | minus: 1990 }}-year-old software engineer based in Hyderabad, India. For the past **{{ 'now' | date: '%Y' | minus: 2011 }}+ years** I've been coding mostly in *PHP*, *Python*, *Ruby*, *Node.js* and *React* with a strong interest in back-end development. I love writing code, listening to music and playing games on the computer.
+I'm a {{ 'now' | date: '%Y' | minus: 1990 }}-year-old software engineer based in Hyderabad, India. For the past **{{ 'now' | date: '%Y' | minus: 2011 }}+ years** I've been coding mostly in *Python*, *Ruby*, *Node.js* and *React* with a strong interest in back-end development.
+
+I love writing code, listening to music and playing games on the computer.
 
 ---
 
