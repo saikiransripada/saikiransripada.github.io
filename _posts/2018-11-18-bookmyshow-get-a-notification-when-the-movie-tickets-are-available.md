@@ -11,5 +11,5 @@ This python script checks if movie tickets are available for a showtime and send
 
 Run the script using `python3 app.py`.
 
-Please feel free to fork and file issues or pull requests.
+Please feel free to fork and file issues or create pull requests.
 [https://github.com/saikiransripada/bookmyshow](https://github.com/saikiransripada/bookmyshow){:target="_blank"}
