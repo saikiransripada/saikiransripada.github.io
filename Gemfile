@@ -1,6 +1,15 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
+ruby RUBY_VERSION
 
-# A simple Ruby Gem to bootstrap dependencies for setting up and
-# maintaining a local Jekyll environment in sync with GitHub Pages
-# https://github.com/github/pages-gem
-gem 'github-pages'
+# Happy Jekylling!
+gem "jekyll", "~> 3.8"
+
+# Plugins
+group :jekyll_plugins do
+   gem "jekyll-feed", "~> 0.13"
+   gem "redcarpet"
+   gem "jekyll-assets"
+   gem "jekyll-paginate"
+   # gem "jekyll-livereload"
+   gem "jekyll-last-modified-at"
+end

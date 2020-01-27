@@ -1,34 +1,28 @@
 ---
 layout: default
+invisible: true
+seo:
+  title: Sai Kiran Sripada
 ---
-{% assign posts_count = paginator.posts | size %}
 
-<div class="home">
-  {% if posts_count > 0 %}
-    <div class="posts">
-      {% for post in paginator.posts %}
-        <div class="post py3">
-          <p class="post-meta">
-	    {% if site.date_format %}
-	      {{ post.date | date: site.date_format }}
-	    {% else %}
-	      {{ post.date | date: "%b %-d, %Y" }}
-	    {% endif %}
-	  </p>
-          <a href="{{ post.url | relative_url }}" class="post-link"><h3 class="h1 post-title">{{ post.title }}</h3></a>
-          <span class="post-summary">
-            {% if post.summary %}
-              {{ post.summary }}
-            {% else %}
-              {{ post.excerpt }}
-            {% endif %}
-          </span>
-        </div>
-      {% endfor %}
-    </div>
+{% if site.pitch == null %}
+  {% assign div_class = "home" %}
+{% else %}
+  {% assign div_class = "home pitch" %}
+{% endif %}
 
-    {% include pagination.html %}
-  {% else %}
-    <h1 class='center'>{{ site.text.index.coming_soon }}</h1>
-  {% endif %}
+<div class="{{ div_class }}">
+
+  {% include post-ul.html limit=true %}
+
+  <!-- Pagination links -->
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a class="prev" href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous button__outline">&laquo; Newer Posts</a> 
+    {% endif %}
+    {% if paginator.next_page %}
+      <a class="next" href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next button__outline">Older Posts &raquo;</a>
+    {% endif %}
+  </div>
+
 </div>

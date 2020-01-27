@@ -1,84 +1,53 @@
-# Site settings
-title:       Sai Kiran Sripada
-email:       hello@saikiransripada.com
-author:      Sai Kiran Sripada
-description: "A full-stack developer based in India, currently focusing on Python, Node.js, React, Vue.js and Ruby Technologies."
-baseurl:     ""
-url:         "https://www.saikiransripada.com"
-date_format: "%b %-d, %Y"
-header_pages:
- - about.md
- - projects.md
-google_analytics:
+# General settings
+title: Sai Kiran Sripada
+title_html: "<b>Sai Kiran</b> Sripada"
+pitch:
+description: A full-stack developer, currently focusing on Python, Node.js, React, Vue.js and Ruby Technologies.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.saikiransripada.com" # the base hostname & protocol for your site, e.g. http://example.com
 
-# Optional features
-animated:             true
-show_related_posts:   true
-show_post_footers:    false
-show_social_icons:    true
+nb_posts_page: 3
+dateformat: "%b %-d, %Y"
 
-# Preview image for social media aka og:image and twitter:image
-post_preview_image: false
+cta:
+  like: "Do you enjoy the blog?"
+  post: "Did you like that post?"
+  rss: ["You can suscribe to the", "RSS feed", ""]
+  twitter: ["or follow", "on Twitter"]
 
-# Disqus post comments
-disqus_shortname:
+archive: "Welcome to the archives of this blog. Below, you will find all published posts listed in reverse chronological order."
+notfound: "I guess this page has moved somewhere else..."
 
-# Social icons
-github_username: saikiransripada
+# Author
+author: Sai Kiran Sripada
+email: hello@saikiransripada.com
 twitter_username: wp_user
+github_username: saikiransripada
+keybase_username: saikiransripada
 linkedin_username: saikiransripada
+author_website: https://www.saikiransripada.com/
 
-# Post sharing icons
-show_sharing_icons: true
-# Change to 'true' to enable individual icons
-share_facebook: true
-share_twitter: true
-share_googleplus: true
-share_linkedin: true
-share_digg: true
-share_tumblr: true
-share_reddit: true
-share_stumbleupon: true
-share_hackernews: true
+paginate: 3
+paginate_path: /page/:num/
 
 text:
   pagination:
     newer: 'Newer'
     older: 'Older'
-  share_buttons:
-    text:         'Share:'
-    facebook:     'Share on Facebook'
-    twitter:      'Share on Twitter'
-    googleplus:   'Share on Google+'
-    linkedin:     'Share on LinkedIn'
-    digg:         'Share on Digg'
-    tumblr:       'Share on Tumblr'
-    reddit:       'Share on Reddit'
-    stumbleupon:  'Share on StumbleUpon'
-    hackernews:   'Share on Hacker News'
-  post:
-    updated:        'Updated'
-    minute_read:    'minute read'
-    related_posts:  'Related Posts'
-  index:
-    coming_soon: 'Coming soon...'
-  og_locale: 'en_US'
 
 # Build settings
-markdown:     kramdown
+markdown: kramdown
 redcarpet:
-  extensions: ['smart', 'tables', 'with_toc_data']
-permalink:    :title
-paginate:     4
+  extensions: ["tables", "fenced_code_blocks", "autolink", "footnotes"]
+permalink: pretty
 sass:
   style: compressed
 plugins:
   - jekyll-paginate
-  - jekyll-sitemap
-
+  - jekyll-feed
+  - jekyll-assets
+  - jekyll-last-modified-at
 exclude:
+  - jekyll_build.sh
   - Gemfile
   - Gemfile.lock
-  - Rakefile
-  - README.md
-  - vendor

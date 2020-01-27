@@ -1,0 +1,13 @@
+{% if include.limit %}
+  {% assign limit = site.nb_posts_page %}
+{% else %}
+  {% assign limit = 1000000 %}
+{% endif %}
+
+<ul class="post-list">
+  {% assign posts = site.posts %}
+
+  {% for post in paginator.posts limit:limit %}
+    {% include post-li.html %}
+  {% endfor %}
+</ul>

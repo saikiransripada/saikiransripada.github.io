@@ -1,0 +1,2 @@
+Sitemap: https://www.saikiransripada.com/sitemap.xml
+User-agent: *

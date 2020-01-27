@@ -1,10 +1,11 @@
 ---
 layout: page
 title: Projects
-summary: A list of small experimental side projects.
-tags: projects
+permalink: /projects/
 ---
 
-1. [BookMyShow - Get a notification when the movie tickets are available]({{ site.url }}/bookmyshow-get-a-notification-when-the-movie-tickets-are-available/)
-2. [Instagram - Download photos and videos from a public profile]({{ site.url }}/instagram-download-photos-and-videos-from-a-public-profile/)
-3. [Instagram - Find similar hashtags of a keyword]({{ site.url }}/instagram-find-similar-hashtags-of-a-keyword/)
+Here's what I do with my free time!
+
+1. [Get a notification when the movie tickets are available on BookMyShow]({{ site.url }}/get-a-notification-when-the-movie-tickets-are-available-on-bookmyshow/)
+2. [Download photos, videos, and sidecars from Instagram]({{ site.url }}/download-photos-and-videos-from-instagram/)
+3. [Find similar Instagram hashtags of a keyword]({{ site.url }}/find-similar-instagram-hashtags-of-a-keyword/)

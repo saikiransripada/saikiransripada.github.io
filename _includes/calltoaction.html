@@ -1,0 +1,19 @@
+<div class="colored-block">
+  {% assign cta = site.cta %}
+  {% if page.layout == "home" or page.layout == "archive" %}
+    {{ cta.like | escape }}
+  {% else if page.layout == "post" %}
+    {{ cta.post | escape }}
+  {% else %}
+  {% endif %}
+
+  {{ cta.rss[0] }}
+  <a href="/feed.xml">{{ cta.rss[1] }}</a>
+  {{ cat.rss[2]}}
+
+  {% if site.twitter_username %}
+    {{ cta.twitter[0] }}
+    <a href="https://twitter.com/{{ site.twitter_username }}">@{{ site.twitter_username }}</a>
+    {{ cta.twitter[1] }}
+  {% endif %}.
+</div>

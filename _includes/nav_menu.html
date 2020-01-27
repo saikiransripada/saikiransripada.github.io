@@ -1,0 +1,9 @@
+<ul class="nav-list {{ include.class }}">
+{% for my_page in site.pages %}
+{% unless my_page.invisible %}
+  {% if my_page.title %}
+  <li><a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
+  {% endif %}
+{% endunless %}
+{% endfor %}
+</ul>

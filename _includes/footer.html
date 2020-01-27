@@ -1,17 +1,48 @@
-<footer class="center">
-  <div class="measure">
-    <div class="left">
-      <small>
-        &copy; {{ site.time | date:"%Y" }} {{ site.title }}
-      </small>
+<footer class="site-footer">
+  <div class="wrapper">
+
+      <ul class="footer-col footer-col-1">
+        <li>
+          <a href="/">{{ site.title_html }}</a>
+        </li>
+
+        {% if site.description %}
+        <li>{{site.description}}</li>
+        {% endif %}
+
+      </ul>
+
+      {% if site.pitch %}
+        <nav>
+        {% include nav_menu.html class="footer-col footer-col-2"%}
+        {% include contactlist.html class="single-col" %}
+        </nav>
+      {% else %}
+        {% include contactlist.html class="footer-col footer-col-2" %}
+      {% endif %}
+
+    <div class="bottom">
+
+      <ul class="lang-selector">
+      <span class="lang-intro"></span>
+      {% for my_page in site.pages %}
+      {% unless my_page.invisible %}
+        {% if my_page.title %}
+        <li class="lang">
+          <a href="{{ my_page.url | relative_url }}" title="{{ my_page.title | escape }}">{{ my_page.title | escape }}</a>
+        </li>
+        {% endif %}
+      {% endunless %}
+      {% endfor %}
+      </ul>
+
+      <div class="legal">
+      © <a href="/">{{ site.title_html }}</a>
+      {% assign oldest_post = site.posts reversed | first %}
+      {% assign oldest = oldest_post.date | date: "%Y" %}
+      {% assign newest = site.time | date: "%Y" %}
+      ({% if oldest != newest %}{{ oldest }}-{% endif %}{{ newest }})
+     </div>
     </div>
-    {% if site.show_social_icons %}
-      {% include social_links.html %}
-    {% endif %}
   </div>
 </footer>
-<script type="text/javascript">
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("{{ '/sw.js' | relative_url }}")
-    }
-</script>

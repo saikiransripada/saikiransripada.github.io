@@ -1,10 +1,11 @@
 ---
-layout:     post
-title:      Get the file extension in PHP
-date:       2015-11-24
-summary:    A simple function to get the extension of a file. Meet pathinfo().
+layout: post
+title: Get the file extension in PHP
+summary: A simple function to get the extension of a file. Meet pathinfo().
+permalink: /get-the-file-extension-in-php/
+date: 2015-11-24 18:01:27 +0100
 categories: php
-permalink:  /get-the-file-extension-in-php/
+hide_summary: true
 ---
 
 A simple function to get the extension of a file. Meet [pathinfo()](https://php.net/pathinfo){:target="_blank"}.

@@ -1,64 +1,49 @@
 ---
 layout: default
 ---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-{% assign minutes = content | strip_html | number_of_words | divided_by: 180 %}
-{% if minutes == 0 %}
-{% assign minutes = 1 %}
-{% endif %}
-
-<div class="post-header mb2">
-  <h1>{{ page.title }}</h1>
-  <span class="post-meta">{{ page.date | date: site.date_format }} |</span>
-  {% if page.update_date %}
-    <span class="post-meta">{{ site.text.post.updated | default: "Updated" }}: {{ page.update_date | date: site.date_format }} |</span>
-  {% endif %}
-  <span class="post-meta small">
-  {% if page.minutes %}
-    {{ page.minutes }} {{ site.text.post.minute_read | default: "minute read" }}
+  {% if page.thumbnail %}
+  <header class="post-header with-thumbnail">
   {% else %}
-    {{ minutes }} {{ site.text.post.minute_read | default: "minute read" }}
+  <header class="post-header">
   {% endif %}
-  </span>
-</div>
+    {% if page.thumbnail %}
+    <img class="post-thumbnail" src="/assets/{{ page.thumbnail }}" alt="{{ page.title | escape }}"/>
+    {% endif %}
+    <div class="wrapper">
+      <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
+      <p class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          {{ page.date | date: site.dateformat }}
+        </time>
+        <span class="last-update">·
+          last updated on {{ page.last_modified_at | date: site.dateformat }} 
+        </span>
+        {% if page.author %} • 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+        {% endif %}
+      </p>
 
-<article class="post-content">
-  {{ content }}
+      {% if page.hide_summary != true %}
+      <h3 class="post-summary">{{ page.summary }}</h3>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <div class="pagination">
+    {% if page.next.url %}
+      <a class="prev" href="{{page.next.url}}">&laquo; {{page.next.title}}</a>
+    {% endif %}
+    {% if page.previous.url %}
+      <a class="next" href="{{page.previous.url}}">{{page.previous.title}} &raquo;</a>
+    {% endif %}
+  </div>
+
+  {% include calltoaction.html %}
+
 </article>
-
-{% if site.show_sharing_icons %}
-  {% include share_buttons.html %}
-{% endif %}
-
-{% if site.show_post_footers %}
-  {% include post_footer.html %}
-{% endif %}
-
-{% if site.disqus_shortname %}
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-    var disqus_shortname  = '{{ site.disqus_shortname }}';
-    var disqus_identifier = '{{ page.id }}';
-    var disqus_title      = {{ page.title | jsonify }};
-
-    (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-{% endif %}
-
-{% if site.show_related_posts %}
-  <h3 class="related-post-title">{{ site.text.post.related_posts | default: "Related Posts" }}</h3>
-  <ul class="related-posts">
-    {% for post in site.related_posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}" class="post-link">
-          {{ post.title }}
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-{% endif %}
