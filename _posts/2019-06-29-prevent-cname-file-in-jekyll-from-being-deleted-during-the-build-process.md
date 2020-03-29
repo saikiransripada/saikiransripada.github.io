@@ -2,6 +2,7 @@
 layout: post
 title: Prevent CNAME file in Jekyll from being deleted during the build process
 summary: In Jekyll, the "_site" folder gets deleted and rebuilt after every change or build execution.
+thumbnail: images/jason-leung-TAltMGNXlos-unsplash.jpg
 permalink: /prevent-cname-file-in-jekyll-from-being-deleted-during-the-build-process/
 categories: jekyll ruby
 date: 2019-06-29 18:01:27 +0100

@@ -2,6 +2,7 @@
 layout: post
 title: Include CSS or JavaScript in Moodle
 summary: When writing a custom plugin, place CSS in a file called styles.css in the base directory of your plugin /plugin/styles.css. Moodle will automatically load the CSS file for you.
+thumbnail: images/omid-armin-cF6gNl0EE-E-unsplash.jpg
 permalink: /include-css-or-javascript-in-moodle/
 date: 2015-11-20 18:01:27 +0100
 categories: moodle php

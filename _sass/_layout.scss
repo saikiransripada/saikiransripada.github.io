@@ -620,6 +620,10 @@
       margin: 0px;
     }
   }
+
+  .without-summary {
+    padding-bottom: 0;
+  }
 }
 
 .post-title {
@@ -633,7 +637,7 @@
 
 .post-summary {
   margin-top: 0;
-  margin-bottom: $spacing-unit;
+  font-style: italic;
 }
 
 .post-content {
@@ -657,6 +661,12 @@
     hr {
       margin-top: 0;
     }
+  }
+}
+
+div {
+  .post-content {
+    margin-top: $spacing-unit / 2;
   }
 }
 

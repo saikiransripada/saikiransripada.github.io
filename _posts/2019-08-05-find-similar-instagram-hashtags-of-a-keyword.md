@@ -2,6 +2,7 @@
 layout: post
 title: Find similar Instagram hashtags of a keyword
 summary: A simple command-line script that lists similar hashtags based on a user keyword.
+thumbnail: images/riyan-wicaksono-LuZc578rdAc-unsplash.jpg
 permalink: /find-similar-instagram-hashtags-of-a-keyword/
 categories: python instagram
 date: 2019-08-05 18:01:27 +0100

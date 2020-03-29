@@ -2,6 +2,7 @@
 layout: post
 title: Download photos, videos, and sidecars from Instagram
 summary: A simple command-line script to download photos, videos, and sidecars (album) of an Instagram profile.
+thumbnail: images/patrick-schneider-8bPJ0vagphw-unsplash.jpg
 permalink: /download-photos-and-videos-from-instagram/
 categories: python instagram
 date: 2019-08-04 18:01:27 +0100
