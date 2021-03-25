@@ -1,18 +1,30 @@
 <span class="contact-list-title">Links</span>
 <ul class="contact-list {{ include.class }}">
+  {% if site.email %}
+  <li>
+    {% include _icons/email.html username=site.email %}
+  </li>
+  {% endif %}
+
+  {% if site.curriculum.url %}
+  <li>
+    {% include _icons/file.html curriculum=site.curriculum %}
+  </li>
+  {% endif %}
+
   <li>
     {% include _icons/rss.html %}
   </li>
 
-  {% if site.github_username %}
-  <li>
-    {% include _icons/github.html username=site.github_username %}
-  </li>
-  {% endif %}
-
   {% if site.twitter_username %}
   <li>
     {% include _icons/twitter.html username=site.twitter_username %}
+  </li>
+  {% endif %}
+
+  {% if site.github_username %}
+  <li>
+    {% include _icons/github.html username=site.github_username %}
   </li>
   {% endif %}
 
@@ -25,6 +37,24 @@
   {% if site.keybase_username %}
   <li>
     {% include _icons/keybase.html username=site.keybase_username %}
+  </li>
+  {% endif %}
+
+  {% if site.hackerrank_username %}
+  <li>
+    {% include _icons/hackerrank.html username=site.hackerrank_username %}
+  </li>
+  {% endif %}
+
+  {% if site.steam_username %}
+  <li>
+    {% include _icons/steam.html username=site.steam_username %}
+  </li>
+  {% endif %}
+
+  {% if site.author_website %}
+  <li>
+    {% include _icons/website.html url=site.author_website %}
   </li>
   {% endif %}
 

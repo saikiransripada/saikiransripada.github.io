@@ -1,4 +1,4 @@
-{% if include.limit %}
+<!-- {% if include.limit %}
   {% assign limit = site.nb_posts_page %}
 {% else %}
   {% assign limit = 1000000 %}
@@ -10,4 +10,28 @@
   {% for post in paginator.posts limit:limit %}
     {% include post-li.html %}
   {% endfor %}
-</ul>
+</ul> -->
+
+<section class="post-list">
+  <div class="container">
+    {% for post in site.posts %}
+      {% unless post.next %}
+        <h2 class="category-title">{{ post.date | date: '%Y' }}</h2>
+        <hr />
+      {% else %}
+        {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+        {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+        {% if year != nyear %}
+          <h2 class="category-title">{{ post.date | date: '%Y' }}</h2>
+          <hr />
+        {% endif %}
+      {% endunless %}
+      <article class="post-item">
+        <div class="article-title">
+          <span class="post-meta date-label">{{ post.date | date: "%b %d" }} /</span>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
