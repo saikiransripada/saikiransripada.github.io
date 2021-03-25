@@ -249,11 +249,11 @@ h5 + table, h6 + table {
 
 hr {
   color: $grey-color;
-  margin: $spacing-unit auto $spacing-unit / 2 auto;
+  margin: $spacing-unit / 5 auto $spacing-unit / 2 auto;
   width: 100%;
   padding-left: 10%;
   border: none;
-  border-top: 1px dashed $grey-color;
+  border-top: 1px solid $grey-color;
   @include size(small);
 }
 

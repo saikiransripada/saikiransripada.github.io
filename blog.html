@@ -1,8 +1,7 @@
 ---
-layout: default
-invisible: true
-seo:
-  title: Sai Kiran Sripada
+layout: page
+permalink: /blog/
+title: Blog
 ---
 
 {% if site.pitch == null %}
@@ -16,13 +15,13 @@ seo:
   {% include post-ul.html limit=true %}
 
   <!-- Pagination links -->
-  <div class="pagination">
+  <!-- <div class="pagination">
     {% if paginator.previous_page %}
       <a class="prev" href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous button__outline">&laquo; Newer Posts</a> 
     {% endif %}
     {% if paginator.next_page %}
       <a class="next" href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next button__outline">Older Posts &raquo;</a>
     {% endif %}
-  </div>
+  </div> -->
 
 </div>

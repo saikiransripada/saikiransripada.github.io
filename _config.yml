@@ -21,11 +21,13 @@ notfound: "I guess this page has moved somewhere else..."
 # Author
 author: Sai Kiran Sripada
 email: hello@saikiransripada.com
-twitter_username: wp_user
+twitter_username: saiconnects
 github_username: saikiransripada
-keybase_username: saikiransripada
+keybase_username:
 linkedin_username: saikiransripada
-author_website: https://www.saikiransripada.com/
+hackerrank_username: saikiransripada
+steam_username:
+author_website:
 
 paginate: 3
 paginate_path: /page/:num/
