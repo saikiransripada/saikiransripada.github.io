@@ -20,7 +20,7 @@
     {% include footer.html %}
 
     {% if page.layout == "about" %}
-    <script async src="{{ '/assets/script.min.js' | relative_url }}"></script>
+    <script defer src="{{ '/assets/script.min.js' | relative_url }}"></script>
     {% endif %}
   </body>
 </html>

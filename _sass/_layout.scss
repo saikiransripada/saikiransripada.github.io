@@ -504,8 +504,10 @@
   }
 }
 
-@include media-query($on-palm) {
-  .only-desktop {
+.only-desktop {
+  display: block;
+
+  @include media-query($on-palm) {
     display: none;
   }
 }
