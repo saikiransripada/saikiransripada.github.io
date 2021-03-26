@@ -17,9 +17,9 @@
   <meta name="description" content="{{site.description}}">
   {% endif %}
 
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title | strip_newlines }}" href="{{ "/feed.xml" | relative_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | strip_newlines }}" href="{{ '/feed.xml' | relative_url }}">
 
   {% capture favicons %}
   {% for file in site.static_files %}
