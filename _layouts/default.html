@@ -12,10 +12,15 @@
     {% endif %}
       <div class="wrapper">
         {{ content }}
+
+        {% include currenttrack.html %}
       </div>
     </main>
 
     {% include footer.html %}
 
+    {% if page.layout == "about" %}
+    <script async src="{{ '/assets/script.min.js' | relative_url }}"></script>
+    {% endif %}
   </body>
 </html>
