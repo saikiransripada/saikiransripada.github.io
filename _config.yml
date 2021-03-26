@@ -37,6 +37,11 @@ text:
     newer: 'Newer'
     older: 'Older'
 
+# Favicon
+favicon:
+  safari: 5bbad5
+  theme: 3f3f3f
+
 # Build settings
 markdown: kramdown
 redcarpet:

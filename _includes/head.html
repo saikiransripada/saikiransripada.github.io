@@ -38,6 +38,6 @@
   {% endfor %}
   {% endcapture %}
   {{ favicons | strip_newlines | lstrip }}
-  <meta name="theme-color" content="#{{ site.favicon.theme | default:"ffffff" }}">
+  <meta name="theme-color" content="#{{ site.favicon.theme | default:'ffffff' }}">
 
 </head>
