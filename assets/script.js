@@ -83,7 +83,7 @@ window.addEventListener('load', function() {
         format: 'json',
         limit: 1
     }
-    const recentTrackUrl = "http://ws.audioscrobbler.com/2.0/?" + new URLSearchParams(params).toString()
+    const recentTrackUrl = "https://ws.audioscrobbler.com/2.0/?" + new URLSearchParams(params).toString()
 
     fetch(recentTrackUrl).then(response => {
         if (response.ok) {
