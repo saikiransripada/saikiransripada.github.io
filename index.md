@@ -1,6 +1,8 @@
 ---
 layout: about
 title: Sai Kiran Sripada
+seo:
+    title: Sai Kiran Sripada
 invisible: true
 ---
 

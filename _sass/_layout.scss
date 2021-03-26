@@ -489,8 +489,14 @@
 /**
  * Page content
  */
- .home {
+.home {
   padding-bottom: 2em;
+}
+
+@include media-query($on-palm) {
+  .only-desktop {
+    display: none;
+  }
 }
 
 .page-content {
