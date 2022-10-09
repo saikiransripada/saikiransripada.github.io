@@ -46,6 +46,12 @@
   </li>
   {% endif %}
 
+  {% if site.leetcode_username %}
+  <li>
+    {% include _icons/leetcode.html username=site.leetcode_username %}
+  </li>
+  {% endif %}
+
   {% if site.steam_username %}
   <li>
     {% include _icons/steam.html username=site.steam_username %}

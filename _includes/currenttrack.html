@@ -1,4 +1,4 @@
-{% if page.layout == "about" %}
+{% if page.layout == "about" and site.lastfrm == true %}
 <p class="currenttrack-wrapper">
     <img src="{{ 'assets/images/headphones.png' | relative_url }}" alt="" />
     <span id="currenttrack">Listening to ...</span>

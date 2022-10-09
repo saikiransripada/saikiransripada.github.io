@@ -8,6 +8,7 @@ url: "https://www.saikiransripada.com" # the base hostname & protocol for your s
 
 nb_posts_page: 3
 dateformat: "%b %-d, %Y"
+lastfm: true
 
 cta:
   like: "Do you enjoy the blog?"
@@ -21,11 +22,12 @@ notfound: "I guess this page has moved somewhere else..."
 # Author
 author: Sai Kiran Sripada
 email: hello@saikiransripada.com
-twitter_username: saiconnects
+twitter_username: _heysai
 github_username: saikiransripada
 keybase_username:
 linkedin_username: saikiransripada
-hackerrank_username: saikiransripada
+hackerrank_username: 
+leetcode_username: saikiransripada
 steam_username:
 author_website:
 
