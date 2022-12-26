@@ -92,8 +92,9 @@ window.addEventListener('load', function() {
                 track = response.recenttracks.track[0]
 
                 if(track.url) {
+                    artistUrl = track.url.split("/_/")[0]
                     trackName = `<a href="${track.url}" target="_blank">${track.name}</a>`
-                    trackArtist = `<a href="${track.url}" target="_blank">${track.artist["#text"]}</a>`
+                    trackArtist = `<a href="${artistUrl}" target="_blank">${track.artist["#text"]}</a>`
                 } else {
                     trackName = track.name
                     trackArtist = track.artist["#text"]
