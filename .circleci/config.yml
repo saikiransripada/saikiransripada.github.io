@@ -1,0 +1,26 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.4.2
+    working_directory: ~/project
+    steps:
+      - checkout
+      - run: gem update --system
+      - run: gem install bundler --version=1.17.2
+      - run: bundle install
+      - run: JEKYLL_ENV=production bundle exec jekyll build --destination _site
+      - run: cp CNAME ./_site/CNAME
+      - run: echo "Build finished!"
+
+workflows:
+  version: 2
+  test-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: dev
