@@ -38,9 +38,9 @@
 
       <div class="legal">
       © <a href="/">{{ site.title_html }}</a>
-      {% assign oldest_post = site.posts reversed | first %}
+      {% assign oldest_post = site.posts | first %}
       {% assign oldest = oldest_post.date | date: "%Y" %}
-      {% assign newest = site.time | date: "%Y" %}
+      {% assign newest = "now" | date: "%Y" %}
       ({% if oldest != newest %}{{ oldest }}-{% endif %}{{ newest }})
      </div>
     </div>
