@@ -1,21 +1,59 @@
-version: 2
+defaults: &defaults
+  working_directory: ~/repo
+version: 2.1
+
+orbs:
+  aws-s3: circleci/aws-s3@1.0.4
+
 jobs:
   build:
+    <<: *defaults
     docker:
       - image: circleci/ruby:2.4.2
-    working_directory: ~/project
+    environment:
+      BUNDLE_PATH: ~/repo/vendor/bundle
     steps:
       - checkout
-      - run: gem update --system
-      - run: gem install bundler --version=1.17.2
-      - run: bundle install
-      - run: JEKYLL_ENV=production bundle exec jekyll build --destination _site
-      - run: cp CNAME ./_site/CNAME
-      - run: echo "Build finished!"
-
+      - restore_cache:
+          keys:
+            - rubygems-v1-{{ checksum "Gemfile.lock" }}
+            - rubygems-v1-fallback
+      - run:
+          name: Install Bundler
+          command: gem install bundler
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+      - save_cache:
+          key: rubygems-v1-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - run:
+          name: Jekyll build
+          command: JEKYLL_ENV=production bundle exec jekyll build --destination _site
+      - run:
+          name: Copy CNAME
+          command: cp CNAME ./_site/CNAME
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - _site
+  deploy:
+    <<: *defaults
+    docker:
+      - image: circleci/python:3.6.3
+    steps:
+      - attach_workspace:
+          at: ./
+      - aws-s3/sync:
+          from: ./_site
+          to: 's3://<s3 bucket name>'
+          arguments: |
+            --acl public-read \
+            --cache-control "max-age=86400"
 workflows:
-  version: 2
-  test-deploy:
+  version: 2.1
+  build-test-deploy:
     jobs:
       - build
       - deploy:
