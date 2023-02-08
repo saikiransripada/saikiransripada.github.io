@@ -6,8 +6,8 @@ jobs:
     working_directory: ~/www
     steps:
       - checkout
-      - run: rvm use default
-      - run: gem update --system
+      #- run: rvm use default
+      #- run: gem update --system
       - run: gem install bundler --version=1.17.3
       - run: bundle install
       - run: JEKYLL_ENV=production bundle exec jekyll build --destination _site
