@@ -9,7 +9,7 @@ jobs:
   build:
     <<: *defaults
     docker:
-      - image: circleci/ruby:2.3.26
+      - image: circleci/ruby:2.4.2
     environment:
       BUNDLE_PATH: ~/repo/vendor/bundle
     steps:
@@ -20,7 +20,7 @@ jobs:
             - rubygems-v1-fallback
       - run:
           name: Install Bundler
-          command: gem install bundler
+          command: gem install bundler -v 2.3.26
       - run:
           name: Bundle Install
           command: bundle check || bundle install
