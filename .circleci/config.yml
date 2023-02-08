@@ -2,9 +2,6 @@ defaults: &defaults
   working_directory: ~/repo
 version: 2.1
 
-orbs:
-  aws-s3: circleci/aws-s3@1.0.4
-
 jobs:
   build:
     <<: *defaults
