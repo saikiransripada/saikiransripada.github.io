@@ -13,6 +13,9 @@ jobs:
           name: Install Bundler
           command: gem install bundler -v 2.3.26
       - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+      - run:
           name: "Build site"
           command: JEKYLL_ENV=production bundle exec jekyll build --destination _site
       - persist_to_workspace:
