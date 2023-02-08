@@ -39,6 +39,9 @@ jobs:
     <<: *defaults
     docker:
       - image: circleci/python:3.6.3
+    steps:
+      - attach_workspace:
+          at: ./
 
 workflows:
   version: 2.1
