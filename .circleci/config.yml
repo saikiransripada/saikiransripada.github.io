@@ -1,43 +1,14 @@
-defaults: &defaults
-  working_directory: ~/www
-version: 2.1
-
+version: 2
 jobs:
   build:
-    <<: *defaults
     docker:
-      - image: circleci/ruby:2.4.2
+      - image: circleci/ruby:3.0.2
+    working_directory: ~/www
     steps:
       - checkout
-      - run:
-          name: Install Bundler
-          command: gem install bundler -v 2.3.26
-      - run:
-          name: Bundle Install
-          command: bundle check || bundle install
-      - run:
-          name: "Build site"
-          command: JEKYLL_ENV=production bundle exec jekyll build --destination _site
-      - persist_to_workspace:
-          root: _site
-          paths:
-            - ""
-  deploy:
-    <<: *defaults
-    docker:
-      - image: circleci/ruby:2.4.2
-    steps:
-      - attach_workspace:
-          at: ~/www/_site
-
-workflows:
-  version: 2
-  build-and-deploy:
-    jobs:
-      - build
-      - deploy:
-          requires:
-            - build
-          filters:
-            branches:
-              only: dev
+      - run: gem update --system
+      - run: gem install bundler --version=1.17.2
+      - run: bundle install
+      - run: JEKYLL_ENV=production bundle exec jekyll build --destination _site
+      - run: cp CNAME ./_site/CNAME
+      - run: echo "Build finished!"
