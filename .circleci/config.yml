@@ -1,37 +1,27 @@
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.6.0
-    working_directory: ~/www
+      - image: cimg/ruby:2.7.4
+    environment:
+      BUNDLE_PATH: ~/repo/vendor/bundle
     steps:
       - checkout
-      #- run: rvm use default
-      #- run: gem update --system
-      - run: gem install bundler --version=1.17.3
-      - run: bundle install
-      - run: JEKYLL_ENV=production bundle exec jekyll build --destination _site
-      - run: cp CNAME ./_site/CNAME
-      - run: echo "Build finished!"
+      - restore_cache:
+          keys:
+            - rubygems-v1-{{ checksum "Gemfile.lock" }}
+            - rubygems-v1-fallback
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+      - save_cache:
+          key: rubygems-v1-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - run:
+          name: Jekyll build
+          command: bundle exec jekyll build
       - persist_to_workspace:
-            root: _site
-            paths:
-              - ""
-
-workflows:
-  version: 2
-  build-and-deploy:
-    jobs:
-      # Build on any branch except github pages
-      - build:
-          filters:
-            branches:
-              ignore: gh-pages
-      # Deploy only on master
-      - deploy:
-          requires:
-            - build
-          filters:
-            branches:
-              only:
-                - dev
+          root: ./
+          paths:
+            - _site
