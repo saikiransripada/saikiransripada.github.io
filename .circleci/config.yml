@@ -5,6 +5,8 @@ jobs:
       - image: cimg/ruby:2.7.4
     environment:
       BUNDLE_PATH: ~/repo/vendor/bundle
+    pre:
+      - gem install bundler:1.17.3
     steps:
       - checkout
       - restore_cache:
