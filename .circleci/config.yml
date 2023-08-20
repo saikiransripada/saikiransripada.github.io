@@ -54,6 +54,11 @@ jobs:
           name: Add Remote Origin
           command: git remote add origin https://github.com/saikiransripada/saikiransripada.github.io.git
       - run:
+          name: Clean Up _site Directory
+          command: |
+            rm -rf ./_site/*
+            git checkout -- ./_site/.gitignore
+      - run:
           name: Fetch and Merge Latest Changes
           command: |
             git fetch origin
