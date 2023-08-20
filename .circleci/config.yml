@@ -59,7 +59,7 @@ jobs:
             ls
             git init
             git remote add origin https://github.com/saikiransripada/saikiransripada.github.io.git
-            git checkout master
+            # git checkout master
             git add .
             git commit -m "Update via CircleCI"
             git push -f https://${GITHUB_TOKEN}@github.com/saikiransripada/saikiransripada.github.io.git master
