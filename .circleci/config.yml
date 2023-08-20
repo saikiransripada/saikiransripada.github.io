@@ -4,6 +4,8 @@ executors:
   ruby-executor:
     docker:
       - image: circleci/ruby:2.7
+        environment:
+          BUNDLE_VERSION: 1.17.3
     working_directory: ~/repo
 
 jobs:
@@ -13,6 +15,9 @@ jobs:
       - checkout
       - restore_cache:
           key: bundler-cache-{{ checksum "Gemfile.lock" }}
+      - run:
+          name: Install Bundler 1.17.3
+          command: gem install bundler -v 1.17.3
       - run:
           name: Install Dependencies
           command: bundle install --path vendor/bundle
