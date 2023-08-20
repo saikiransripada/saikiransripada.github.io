@@ -19,13 +19,13 @@ jobs:
           name: Install Bundler 1.17.3
           command: gem install bundler -v 1.17.3
       - run:
+          name: Initialize Git Repository
+          command: git init
+      - run:
           name: Configure Git
           command: |
             git config --global user.email "deploy@circleci.org"
             git config --global user.name "Deployment Bot"
-      - run:
-          name: Initialize Git Repository
-          command: git init
       - run:
           name: Install Dependencies
           command: bundle install --path vendor/bundle
