@@ -4,22 +4,21 @@ executors:
   ruby-executor:
     docker:
       - image: circleci/ruby:2.7
-        environment:
-          BUNDLE_VERSION: 1.17.3
 
 jobs:
   build:
-    docker:
-      - image: circleci/ruby:2.7
-    working_directory: ~/repo
+    executor: ruby-executor
     steps:
       - checkout
-      - run:
-          name: Install Bundler 1.17.3
-          command: gem install bundler -v 1.17.3
+      - restore_cache:
+          key: bundler-cache-{{ checksum "Gemfile.lock" }}
       - run:
           name: Install Dependencies
           command: bundle install --path vendor/bundle
+      - save_cache:
+          key: bundler-cache-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
       - run:
           name: Build Jekyll Site
           command: JEKYLL_ENV=production bundle exec jekyll build --destination _site
@@ -39,19 +38,13 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - run:
-          name: Initialize Git Repository
-          command: git init
-      - run:
-          name: Configure Git
+          name: Deploy to GitHub Pages
           command: |
             git config --global user.email "deploy@circleci.org"
             git config --global user.name "Deployment Bot"
-      - run:
-          name: Add Files and Deploy
-          command: |
+            git checkout -B master
             git add .
             git commit -m "Deploy to GitHub Pages"
-            git remote add origin https://saikiransripada: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@github.com/saikiransripada/saikiransripada.github.io.git
             git push origin master
 
 workflows:
