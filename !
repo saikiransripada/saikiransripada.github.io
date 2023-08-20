@@ -1,0 +1,69 @@
+[1mdiff --git a/_sass/_layout.scss b/_sass/_layout.scss[m
+[1mindex 5246159..1ad3d60 100644[m
+[1m--- a/_sass/_layout.scss[m
+[1m+++ b/_sass/_layout.scss[m
+[36m@@ -859,4 +859,8 @@[m [mdiv {[m
+ .icon--leetcode {[m
+   width: 20px;[m
+   display: inline-block;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.strikethrough {[m
+[32m+[m[32m  text-decoration: line-through;[m
+ }[m
+\ No newline at end of file[m
+[1mdiff --git a/about.md b/about.md[m
+[1mindex 3b54bd2..33074ab 100644[m
+[1m--- a/about.md[m
+[1m+++ b/about.md[m
+[36m@@ -11,12 +11,12 @@[m [minvisible: true[m
+     {% assign age = 'now' | date: '%Y' | minus: 1991 %}[m
+ {% endif %}[m
+ [m
+[31m-I'm a {{age}}-year-old software engineer based in Hyderabad, India. For the past **{{ 'now' | date: '%Y' | minus: 2012 }}+ years** I've been coding mostly in *Python*, *Ruby*, *Node.js* and *React* with a strong interest in back-end development.[m
+[32m+[m[32mI'm a {{age}}-year-old software engineer based in Hyderabad, India. Over the past **{{ 'now' | date: '%Y' | minus: 2012 }}+ years** I've been coding mostly in *Python*, *Ruby*, *Node.js* and *React* with a strong interest in DSA and back-end development.[m
+ [m
+[31m-I love writing code, [listening to music](https://www.last.fm/user/thephpguy){:target="_blank"} and [playing games](https://steamcommunity.com/id/saikiransripada){:target="_blank"} on the computer.[m
+[32m+[m[32mI enjoy writing code, [listening to music](https://www.last.fm/user/thephpguy){:target="_blank"} and [playing games](https://steamcommunity.com/id/saikiransripada){:target="_blank"} on the computer.[m
+ [m
+ This blog is a timeline of my life. I blog to document my ideas, research and personal feelings for future reference.[m
+ [m
+[31m-If you'd like to get in touch, please send an email to [hello@saikiransripada.com](mailto:hello@saikiransripada.com). If you'd like to talk securely, my PGP key is available on [Keybase](https://keybase.io/saikiransripada){:target="_blank"}.[m
+[32m+[m[32mIf you'd like to get in touch, please send an email to [hello@saikiransripada.com](mailto:hello@saikiransripada.com). For secure communication, my PGP key is available on [Keybase](https://keybase.io/saikiransripada){:target="_blank"}.[m
+ [m
+[31m-All opinions are my own.[m
+[32m+[m[32mAll opinions are solely my own.[m
+[1mdiff --git a/assets/main.scss b/assets/main.scss[m
+[1mindex e535f18..59cff02 100644[m
+[1m--- a/assets/main.scss[m
+[1m+++ b/assets/main.scss[m
+[36m@@ -20,7 +20,7 @@[m [m$spacing-unit:     50px;[m
+ [m
+ $text-color:       #333;[m
+ $background-color: #fdfdfd;[m
+[31m-$brand-color:      #AF473C;[m
+[32m+[m[32m$brand-color:      #D64045;[m
+ [m
+ $grey-color:       #3F3F3F;[m
+ $grey-color-light: lighten($grey-color, 50%);[m
+[1mdiff --git a/index.md b/index.md[m
+[1mindex 673d653..3b949cf 100644[m
+[1m--- a/index.md[m
+[1m+++ b/index.md[m
+[36m@@ -12,12 +12,12 @@[m [minvisible: true[m
+     {% assign age = 'now' | date: '%Y' | minus: 1991 %}[m
+ {% endif %}[m
+ [m
+[31m-I'm a {{age}}-year-old software engineer based in Hyderabad, India. For the past **{{ 'now' | date: '%Y' | minus: 2012 }}+ years** I've been coding mostly in *Python*, *Ruby*, *Node.js*, *PHP*, *React* and *Vue* with a strong interest in back-end development.[m
+[32m+[m[32mI'm a {{age}}-year-old software engineer based in Hyderabad, India. Over the past **{{ 'now' | date: '%Y' | minus: 2012 }}+ years** I've been coding mostly in *Python*, *Ruby*, *Node.js*, *PHP*, *React* and *Vue* with a strong interest in DSA and back-end development.[m
+ [m
+[31m-I love writing code, [listening to music](https://www.last.fm/user/thephpguy){:target="_blank"} and [playing games](https://steamcommunity.com/id/saikiransripada){:target="_blank"} on the computer.[m
+[32m+[m[32mI enjoy [writing code](https://www.leetcode.com/saikiransripada), [listening to music](https://www.last.fm/user/thephpguy){:target="_blank"}, <span class="strikethrough">and [playing computer games](https://steamcommunity.com/id/saikiransripada){:target="_blank"}</span>.[m
+ [m
+ This blog is a timeline of my life. I blog to document my ideas, research and personal feelings for future reference.[m
+ [m
+[31m-If you'd like to get in touch, please send an email to [hello@saikiransripada.com](mailto:hello@saikiransripada.com). If you'd like to talk securely, my PGP key is available on [Keybase](https://keybase.io/saikiransripada){:target="_blank"}.[m
+[32m+[m[32mIf you'd like to get in touch, please send an email to [hello@saikiransripada.com](mailto:hello@saikiransripada.com). For secure communication, my PGP key is available on [Keybase](https://keybase.io/saikiransripada){:target="_blank"}.[m
+ [m
+[31m-All opinions are my own.[m
+[32m+[m[32mAll opinions are solely my own.[m
