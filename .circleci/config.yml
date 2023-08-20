@@ -38,39 +38,25 @@ jobs:
   deploy:
     docker:
       - image: circleci/ruby:2.7
-    working_directory: ~/repo
+    working_directory: ~/deploy_repo
     steps:
       - attach_workspace:
           at: ~/repo
       - run:
-          name: Configure Git
+          name: Clone Repository
           command: |
-            git config --global user.email "deploy@circleci.org"
-            git config --global user.name "Deployment Bot"
+            git clone https://github.com/saikiransripada/saikiransripada.github.io.git .
+            git checkout master
       - run:
-          name: Initialize Git Repository
-          command: git init
-      - run:
-          name: Add Remote Origin
+          name: Copy _site Contents
           command: |
-            git remote add origin https://github.com/saikiransripada/saikiransripada.github.io.git
-            # git fetch origin master
-            # git reset --hard origin/master
-      # - run:
-      #     name: Clean Up _site Directory
-      #     command: |
-      #       rm -rf ./_site/*
-      #       git clone https://github.com/saikiransripada/saikiransripada.github.io.git ./_site
-      #       cd ./_site
+            cp -r ~/repo/_site/* .
       - run:
           name: Commit and Push Changes
           command: |
-            cd ./_site
-            # git init
-            git checkout -B master
             git add -A
             git commit -m "Update via CircleCI"
-            git push -q https://${GITHUB_TOKEN}@github.com/saikiransripada/saikiransripada.github.io.git master
+            git push origin master
 
 workflows:
   version: 2
