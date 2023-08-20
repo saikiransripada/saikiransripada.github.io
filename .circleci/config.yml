@@ -1,76 +1,79 @@
-  version: 2.1
+version: 2.1
 
-  executors:
-    ruby-executor:
-      docker:
-        - image: circleci/ruby:2.7
-          environment:
-            BUNDLE_VERSION: 1.17.3
+executors:
+  ruby-executor:
+    docker:
+      - image: circleci/ruby:2.7
+        environment:
+          BUNDLE_VERSION: 1.17.3
 
-  jobs:
-    build:
-      docker:
-        - image: circleci/ruby:2.7
-      working_directory: ~/repo
-      steps:
-        - checkout
-        - run:
-            name: Install Bundler 1.17.3
-            command: gem install bundler -v 1.17.3
-        - run:
-            name: Install Dependencies
-            command: bundle install --path vendor/bundle
-        - run:
-            name: Build Jekyll Site
-            command: JEKYLL_ENV=production bundle exec jekyll build --destination _site
-        - run:
-            name: Copy CNAME
-            command: cp CNAME ./_site/CNAME
-        - persist_to_workspace:
-            root: ~/repo
-            paths:
-              - _site
+jobs:
+  build:
+    executor: ruby-executor
+    steps:
+      - checkout
+      - restore_cache:
+          key: bundler-cache-{{ checksum "Gemfile.lock" }}
+      - run:
+          name: Install Bundler 1.17.3
+          command: gem install bundler -v 1.17.3
+      - run:
+          name: Initialize Git Repository
+          command: git init
+      - run:
+          name: Install Dependencies
+          command: bundle install --path vendor/bundle
+      - run:
+          name: Build Jekyll Site
+          command: JEKYLL_ENV=production bundle exec jekyll build --destination _site
+      - run:
+          name: Copy CNAME
+          command: cp CNAME ./_site/CNAME
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - _site
 
-    deploy:
-      docker:
-        - image: circleci/ruby:2.7
-      working_directory: ~/repo
-      steps:
-        - attach_workspace:
-            at: ~/repo
-        - run:
-            name: Configure Git
-            command: |
-              git config --global user.email "deploy@circleci.org"
-              git config --global user.name "Deployment Bot"
-        - run:
-            name: Initialize Git Repository
-            command: git init
-        - run:
-            name: Add Remote Origin
-            command: git remote add origin https://github.com/saikiransripada/saikiransripada.github.io.git
-        - run:
-            name: Fetch and Merge Latest Changes
-            command: |
-              git fetch origin
-              git merge origin/master
-        
-        - run:
-            name: Add Files and Deploy
-            command: |
-              cd ./_site
-              git add .
-              git commit -m "Update via CircleCI"
-              git push -q https://${GITHUB_TOKEN}@github.com/saikiransripada/saikiransripada.github.io.git master
+  deploy:
+    docker:
+      - image: circleci/ruby:2.7
+    working_directory: ~/repo
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Configure Git
+          command: |
+            git config --global user.email "deploy@circleci.org"
+            git config --global user.name "Deployment Bot"
+      - run:
+          name: Initialize Git Repository
+          command: git init
+      - run:
+          name: Add Remote Origin
+          command: git remote add origin https://github.com/saikiransripada/saikiransripada.github.io.git
+      - run:
+          name: Fetch and Merge Latest Changes
+          command: |
+            git fetch origin
+            git merge origin/master
+      - run:
+          name: Commit and Push Contents of _site Directory
+          command: |
+            cd ./_site
+            git init
+            git add -A
+            git commit -m "Update via CircleCI"
+            git push -q https://${GITHUB_TOKEN}@github.com/saikiransripada/saikiransripada.github.io.git master
 
-  workflows:
-    version: 2
-    build-and-deploy:
-      jobs:
-        - build
-        - deploy:
-            requires:
-              - build
-            filters:
-              branches:
-                only: dev
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: dev
