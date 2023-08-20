@@ -31,6 +31,23 @@ jobs:
           paths:
             - _site
 
+  deploy:
+    docker:
+      - image: circleci/ruby:2.7
+    working_directory: ~/repo
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Deploy to GitHub Pages
+          command: |
+            git config --global user.email "deploy@circleci.org"
+            git config --global user.name "Deployment Bot"
+            git checkout -B master
+            git add .
+            git commit -m "Deploy to GitHub Pages"
+            git push origin master
+
 workflows:
   version: 2
   build-and-deploy:
@@ -42,20 +59,3 @@ workflows:
           filters:
             branches:
               only: dev
-
-      deploy:
-        docker:
-          - image: circleci/ruby:2.7
-        working_directory: ~/repo
-        steps:
-          - attach_workspace:
-              at: ~/repo
-          - run:
-              name: Deploy to GitHub Pages
-              command: |
-                git config --global user.email "deploy@circleci.org"
-                git config --global user.name "Deployment Bot"
-                git checkout -B master
-                git add .
-                git commit -m "Deploy to GitHub Pages"
-                git push origin master
