@@ -57,7 +57,7 @@ jobs:
       - run:
           name: Commit and Push Changes
           command: |
-            # cd ./_site
+            cd ./_site
             git add -A ./_site
             git commit -m "Update via CircleCI"
             git push -f https://${GITHUB_TOKEN}@github.com/saikiransripada/saikiransripada.github.io.git master
