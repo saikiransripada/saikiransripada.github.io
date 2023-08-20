@@ -19,12 +19,14 @@ jobs:
           name: Install Bundler 1.17.3
           command: gem install bundler -v 1.17.3
       - run:
+          name: Initialize Git Repository
+          command: |
+            git init
+            git config user.email "deploy@circleci.org"
+            git config user.name "Deployment Bot"
+      - run:
           name: Install Dependencies
           command: bundle install --path vendor/bundle
-      - save_cache:
-          key: bundler-cache-{{ checksum "Gemfile.lock" }}
-          paths:
-            - vendor/bundle
       - run:
           name: Build Jekyll Site
           command: JEKYLL_ENV=production bundle exec jekyll build --destination _site
@@ -41,23 +43,20 @@ jobs:
       - image: circleci/ruby:2.7
     working_directory: ~/repo
     steps:
-      - checkout
       - attach_workspace:
           at: ~/repo
       - run:
           name: Configure Git
           command: |
-            git config --global user.email "deploy@circleci.org"
-            git config --global user.name "Deployment Bot"
-            # git checkout -b master
-            # git status
-            # git add .
-            # git commit -m "Deploy to GitHub Pages"
+            git config user.email "deploy@circleci.org"
+            git config user.name "Deployment Bot"
       - run:
-          name: Push to GitHub
+          name: Deploy to GitHub Pages
           command: |
-            git remote add origin_ssh "git@github.com:${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}.git"
-            git push origin_ssh master
+            git add .
+            git commit -m "Deploy to GitHub Pages"
+            git remote add origin https://github.com/saikiransripada/saikiransripada.github.io.git
+            git push origin master
 
 workflows:
   version: 2
@@ -69,4 +68,4 @@ workflows:
             - build
           filters:
             branches:
-              only: master
+              only: dev
