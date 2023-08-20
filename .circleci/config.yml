@@ -54,20 +54,20 @@ jobs:
           name: Add Remote Origin
           command: |
             git remote add origin https://github.com/saikiransripada/saikiransripada.github.io.git
-            git checkout -b master
             # git fetch origin master
             # git reset --hard origin/master
-      - run:
-          name: Clean Up _site Directory
-          command: |
-            rm -rf ./_site/*
-            git clone https://github.com/saikiransripada/saikiransripada.github.io.git ./_site
-            cd ./_site
+      # - run:
+      #     name: Clean Up _site Directory
+      #     command: |
+      #       rm -rf ./_site/*
+      #       git clone https://github.com/saikiransripada/saikiransripada.github.io.git ./_site
+      #       cd ./_site
       - run:
           name: Commit and Push Changes
           command: |
             cd ./_site
-            git init
+            # git init
+            git checkout -B master
             git add -A
             git commit -m "Update via CircleCI"
             git push -q https://${GITHUB_TOKEN}@github.com/saikiransripada/saikiransripada.github.io.git master
