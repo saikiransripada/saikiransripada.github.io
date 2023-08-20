@@ -47,25 +47,30 @@ jobs:
           command: |
             git config --global user.email "deploy@circleci.org"
             git config --global user.name "Deployment Bot"
-      # - run:
-      #     name: Initialize Git Repository
-      #     command: git init
-      # - run:
-      #     name: Add Remote Origin
-      #     command: git remote add origin https://github.com/saikiransripada/saikiransripada.github.io.git
       - run:
-          name: Clean Up _site Directory
+          name: Initialize Git Repository
           command: |
-            rm -rf ./_site/*
-            git clone https://github.com/saikiransripada/saikiransripada.github.io.git ./_site
             cd ./_site
+            git init
+      - run:
+          name: Add Remote Origin
+          command: |
+            git remote add origin https://github.com/saikiransripada/saikiransripada.github.io.git
+            git fetch origin master
+            git reset --hard origin/master
+      # - run:
+      #     name: Clean Up _site Directory
+      #     command: |
+      #       rm -rf ./_site/*
+      #       git clone https://github.com/saikiransripada/saikiransripada.github.io.git ./_site
+      #       cd ./_site
       # - run:
       #     name: Fetch and Merge Latest Changes
       #     command: |
       #       git fetch origin
       #       git merge origin/master
       - run:
-          name: Commit and Push Contents of _site Directory
+          name: Commit and Push Changes
           command: |
             # cd ./_site
             # git init
@@ -74,7 +79,7 @@ jobs:
             # git push -q https://${GITHUB_TOKEN}@github.com/saikiransripada/saikiransripada.github.io.git master
             git add .
             git commit -m "Deploy contents of _site directory to GitHub Pages"
-            git push origin master
+            git push --force origin master
 
 workflows:
   version: 2
