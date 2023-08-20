@@ -1,37 +1,61 @@
 version: 2.1
+
+executors:
+  ruby-executor:
+    docker:
+      - image: circleci/ruby:2.7
+    working_directory: ~/repo
+
 jobs:
   build:
-    docker:
-      - image: cimg/ruby:2.7.4
-    environment:
-      BUNDLE_PATH: ~/repo/vendor/bundle
+    executor: ruby-executor
     steps:
       - checkout
-      - run:
-          name: Checkout to the development branch
-          command: |
-            git checkout dev
       - restore_cache:
-          keys:
-            - rubygems-v1-{{ checksum "Gemfile.lock" }}
-            - rubygems-v1-fallback
+          key: bundler-cache-{{ checksum "Gemfile.lock" }}
       - run:
-          name: Bundle Install
-          command:
-            gem install bundler:1.17.3
-            bundle check || bundle install
+          name: Install Dependencies
+          command: bundle install --path vendor/bundle
       - save_cache:
-          key: rubygems-v1-{{ checksum "Gemfile.lock" }}
+          key: bundler-cache-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
       - run:
-          name: Jekyll build
-          command: bundle exec jekyll build
+          name: Build Jekyll Site
+          command: JEKYLL_ENV=production bundle exec jekyll build --destination _site
+      - run:
+          name: Copy CNAME
+          command: cp CNAME ./_site/CNAME
       - persist_to_workspace:
-          root: ./
+          root: ~/repo
           paths:
             - _site
-      # - deploy:
-      #     name: Deploy Release to GitHub
-      #     command: |
-      #       git checkout master
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: dev
+
+      deploy:
+        docker:
+          - image: circleci/ruby:2.7
+        working_directory: ~/repo
+        steps:
+          - attach_workspace:
+              at: ~/repo
+          - run:
+              name: Deploy to GitHub Pages
+              command: |
+                git config --global user.email "deploy@circleci.org"
+                git config --global user.name "Deployment Bot"
+                git checkout -B master
+                git add .
+                git commit -m "Deploy to GitHub Pages"
+                git push origin master
