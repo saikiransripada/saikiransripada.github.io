@@ -47,14 +47,16 @@ jobs:
           command: |
             git config --global user.email "deploy@circleci.org"
             git config --global user.name "Deployment Bot"
-      - run:
-          name: Initialize Git Repository
-          command: |
-            cd ./_site
-            git init
+      # - run:
+      #     name: Initialize Git Repository
+      #     command: |
+      #       cd ./_site
+      #       git init
       - run:
           name: Add Remote Origin
           command: |
+            cd ./_site
+            git init
             git remote add origin https://github.com/saikiransripada/saikiransripada.github.io.git
       - run:
           name: Commit and Push Changes
