@@ -39,13 +39,13 @@
         - attach_workspace:
             at: ~/repo
         - run:
+            name: Initialize Git Repository
+            command: git init
+        - run:
             name: Fetch and Merge Latest Changes
             command: |
               git fetch origin
               git merge origin/master
-        # - run:
-        #     name: Initialize Git Repository
-        #     command: git init
         - run:
             name: Configure Git
             command: |
