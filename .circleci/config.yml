@@ -56,14 +56,17 @@ jobs:
           name: Add Remote Origin
           command: |
             cd ./_site
+            ls
             git init
             git remote add origin https://github.com/saikiransripada/saikiransripada.github.io.git
-      - run:
-          name: Commit and Push Changes
-          command: |
+            git checkout master
             git add .
             git commit -m "Update via CircleCI"
             git push -f https://${GITHUB_TOKEN}@github.com/saikiransripada/saikiransripada.github.io.git master
+      - run:
+          name: Commit and Push Changes
+          command: |
+            
 
 workflows:
   version: 2
