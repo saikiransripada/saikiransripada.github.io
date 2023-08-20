@@ -49,7 +49,7 @@ jobs:
           command: |
             git config --global user.email "deploy@circleci.org"
             git config --global user.name "Deployment Bot"
-            git checkout -B master
+            git checkout -b master
             git status
             git add .
             git commit -m "Deploy to GitHub Pages"
