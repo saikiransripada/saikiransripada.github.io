@@ -39,19 +39,19 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - run:
+          name: Initialize Git Repository
+          command: git init
+      - run:
           name: Configure Git
           command: |
             git config --global user.email "deploy@circleci.org"
             git config --global user.name "Deployment Bot"
       - run:
-          name: Initialize Git Repository
-          command: git init
-      - run:
           name: Add Files and Deploy
           command: |
             git add .
             git commit -m "Deploy to GitHub Pages"
-            git remote add origin https://github.com/saikiransripada/saikiransripada.github.io.git
+            git remote add origin https://saikiransripada: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@github.com/saikiransripada/saikiransripada.github.io.git
             git push origin master
 
 workflows:
