@@ -6,24 +6,17 @@ executors:
       - image: circleci/ruby:2.7
         environment:
           BUNDLE_VERSION: 1.17.3
-    working_directory: ~/repo
 
 jobs:
   build:
-    executor: ruby-executor
+    docker:
+      - image: circleci/ruby:2.7
+    working_directory: ~/repo
     steps:
       - checkout
-      - restore_cache:
-          key: bundler-cache-{{ checksum "Gemfile.lock" }}
       - run:
           name: Install Bundler 1.17.3
           command: gem install bundler -v 1.17.3
-      - run:
-          name: Initialize Git Repository
-          command: |
-            git init
-            git config user.email "deploy@circleci.org"
-            git config user.name "Deployment Bot"
       - run:
           name: Install Dependencies
           command: bundle install --path vendor/bundle
@@ -48,10 +41,13 @@ jobs:
       - run:
           name: Configure Git
           command: |
-            git config user.email "deploy@circleci.org"
-            git config user.name "Deployment Bot"
+            git config --global user.email "deploy@circleci.org"
+            git config --global user.name "Deployment Bot"
       - run:
-          name: Deploy to GitHub Pages
+          name: Initialize Git Repository
+          command: git init
+      - run:
+          name: Add Files and Deploy
           command: |
             git add .
             git commit -m "Deploy to GitHub Pages"
