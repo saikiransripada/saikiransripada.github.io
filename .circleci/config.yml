@@ -49,7 +49,9 @@ jobs:
             git config --global user.name "Deployment Bot"
       - run:
           name: Initialize Git Repository
-          command: git init
+          command: |
+            cd ./_site
+            git init
       - run:
           name: Add Remote Origin
           command: |
@@ -57,8 +59,7 @@ jobs:
       - run:
           name: Commit and Push Changes
           command: |
-            cd ./_site
-            git add -A ./_site
+            git add .
             git commit -m "Update via CircleCI"
             git push -f https://${GITHUB_TOKEN}@github.com/saikiransripada/saikiransripada.github.io.git master
 
