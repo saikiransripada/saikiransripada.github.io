@@ -61,7 +61,7 @@ jobs:
             git checkout -B master
             git add -A
             git commit -m "Update via CircleCI"
-            git push -q https://${GITHUB_TOKEN}@github.com/saikiransripada/saikiransripada.github.io.git master
+            git push -f https://${GITHUB_TOKEN}@github.com/saikiransripada/saikiransripada.github.io.git master
 
 workflows:
   version: 2
