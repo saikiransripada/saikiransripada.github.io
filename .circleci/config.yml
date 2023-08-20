@@ -22,11 +22,6 @@ jobs:
           name: Initialize Git Repository
           command: git init
       - run:
-          name: Configure Git
-          command: |
-            git config --global user.email "deploy@circleci.org"
-            git config --global user.name "Deployment Bot"
-      - run:
           name: Install Dependencies
           command: bundle install --path vendor/bundle
       - run:
@@ -43,25 +38,30 @@ jobs:
   deploy:
     docker:
       - image: circleci/ruby:2.7
-    working_directory: ~/deploy_repo
+    working_directory: ~/repo
     steps:
       - attach_workspace:
           at: ~/repo
       - run:
-          name: Clone Repository
+          name: Configure Git
           command: |
-            git clone https://github.com/saikiransripada/saikiransripada.github.io.git .
-            git checkout master
+            git config --global user.email "deploy@circleci.org"
+            git config --global user.name "Deployment Bot"
       - run:
-          name: Copy _site Contents
+          name: Initialize Git Repository
+          command: git init
+      - run:
+          name: Add Remote Origin
           command: |
-            cp -r ~/repo/_site/* .
+            git remote add origin https://github.com/saikiransripada/saikiransripada.github.io.git
       - run:
           name: Commit and Push Changes
           command: |
+            cd ./_site
+            git checkout -B master
             git add -A
             git commit -m "Update via CircleCI"
-            git push origin master
+            git push -q https://${GITHUB_TOKEN}@github.com/saikiransripada/saikiransripada.github.io.git master
 
 workflows:
   version: 2
