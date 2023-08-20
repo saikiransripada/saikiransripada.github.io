@@ -47,26 +47,15 @@ jobs:
           command: |
             git config --global user.email "deploy@circleci.org"
             git config --global user.name "Deployment Bot"
-      # - run:
-      #     name: Initialize Git Repository
-      #     command: |
-      #       cd ./_site
-      #       git init
       - run:
-          name: Add Remote Origin
+          name: Commit and Push changes
           command: |
             cd ./_site
-            ls
             git init
             git remote add origin https://github.com/saikiransripada/saikiransripada.github.io.git
-            # git checkout master
             git add .
-            git commit -m "Update via CircleCI"
+            git commit -m "Deployed via CircleCI"
             git push -f https://${GITHUB_TOKEN}@github.com/saikiransripada/saikiransripada.github.io.git master
-      # - run:
-      #     name: Commit and Push Changes
-      #     command: |
-            
 
 workflows:
   version: 2
