@@ -58,11 +58,10 @@
         - run:
             name: Add Files and Deploy
             command: |
-              # git push origin master
               git add .
               git commit -m "Update via CircleCI"
-              git push origin master
-              # git push -q https://${GITHUB_TOKEN}@github.com/saikiransripada/saikiransripada.github.io.git master
+              # git push origin master
+              git push -q https://${GITHUB_TOKEN}@github.com/saikiransripada/saikiransripada.github.io.git master
 
   workflows:
     version: 2
