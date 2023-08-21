@@ -14,7 +14,7 @@ invisible: true
 
 I'm a {{age}}-year-old software engineer based in Hyderabad, India. Over the past **{{ 'now' | date: '%Y' | minus: 2012 }}+ years** I've been coding mostly in *Python*, *Ruby*, *Node.js*, *PHP*, *React* and *Vue* with a strong interest in DSA and back-end development.
 
-I enjoy [writing code](https://www.leetcode.com/saikiransripada), [listening to music](https://www.last.fm/user/thephpguy){:target="_blank"}, <span class="strikethrough">and [playing computer games](https://steamcommunity.com/id/saikiransripada){:target="_blank"}</span>.
+I enjoy writing code, [listening to music](https://www.last.fm/user/thephpguy){:target="_blank"}, <span class="strikethrough">and [playing computer games](https://steamcommunity.com/id/saikiransripada){:target="_blank"}</span>.
 
 This blog is a timeline of my life. I blog to document my ideas, research and personal feelings for future reference.
 
