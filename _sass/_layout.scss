@@ -789,7 +789,7 @@ div {
 
   .user-picture {
     margin-bottom: $spacing-unit / 2;
-    border: 1px solid $grey-color;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 30%);
   }
 
 }
