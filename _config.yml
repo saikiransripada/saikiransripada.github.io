@@ -44,6 +44,16 @@ favicon:
   safari: 5bbad5
   theme: 3f3f3f
 
+# Optimization settings
+compress_html:
+  clippings: all
+  comments: [""]
+  endings: [html, head, body, li, dt, dd, rt, rp, optgroup, option, colgroup, caption, thead, tbody, tfoot, tr, td, th]
+  profile: false
+  blanklines: false
+  ignore:
+    envs: []
+
 # Build settings
 markdown: kramdown
 redcarpet:
