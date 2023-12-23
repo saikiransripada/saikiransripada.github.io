@@ -11,5 +11,6 @@ group :jekyll_plugins do
    gem "jekyll-assets"
    gem "jekyll-paginate"
    # gem "jekyll-livereload"
+   gem "jekyll-compress-html"
    gem "jekyll-last-modified-at"
 end
