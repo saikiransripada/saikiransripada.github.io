@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   {% include head.html %}
-
   <body>
     {% include header.html %}
-
     {% if page.layout == "post" %}
     <main class="post-content" aria-label="Content">
     {% else %}
@@ -18,7 +16,6 @@
     </main>
 
     {% include footer.html %}
-
     {% if page.layout == "about" %}
     <script defer src="{{ '/assets/script.min.js' | relative_url }}"></script>
     {% endif %}

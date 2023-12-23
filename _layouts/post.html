@@ -2,7 +2,6 @@
 layout: default
 ---
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
   {% if page.thumbnail %}
   <header class="post-header with-thumbnail">
   {% else %}
@@ -28,7 +27,6 @@ layout: default
           <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
         {% endif %}
       </p>
-
       {% if page.hide_summary != true %}
       <h3 class="post-summary">{{ page.summary }}</h3>
       {% endif %}
@@ -47,7 +45,5 @@ layout: default
       <a class="next" href="{{page.previous.url}}">{{page.previous.title}} &raquo;</a>
     {% endif %}
   </div>
-
   {% include calltoaction.html %}
-
 </article>

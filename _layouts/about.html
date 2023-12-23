@@ -1,24 +1,18 @@
 ---
 layout: default
 ---
-
 <div class="about-col-wrapper">
   <div class="about-col about-col-1">
-
     {% if site.github_username %}
     <img class="user-picture" src="https://github.com/{{ site.github_username }}.png" alt="{{ site.author }}">
     {% endif %}
 
     {% include contactlist.html class="only-desktop" %}
-
   </div>
   <article class="about-col about-col-2" itemscope itemtype="http://schema.org/BlogPosting">
-
     <h1>{{ page.title }}</h1>
-
     <div class="post-content" itemprop="articleBody">
       {{ content }}
     </div>
-
   </article>
 </div>

@@ -1,15 +1,12 @@
 ---
 layout: default
 ---
-
 {% if site.pitch == null %}
   {% assign div_class = "home" %}
 {% else %}
   {% assign div_class = "home pitch" %}
 {% endif %}
-
 <div class="{{ div_class }}">
-
   {{ content }}
 
   {% include post-ul.html limit=true %}
@@ -22,5 +19,4 @@ layout: default
   <div class="archive">
     See <a href="/archives/">all published posts</a>.</div>
   {% endif %}
-
 </div>
