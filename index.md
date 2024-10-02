@@ -12,7 +12,7 @@ invisible: true
     {% assign age = 'now' | date: '%Y' | minus: 1991 %}
 {% endif %}
 
-I am a {{age}}-year-old software engineer based in Hyderabad, India. Over the past **{{ 'now' | date: '%Y' | minus: 2012 }}+ years**, I have been coding primarily in *Python*, *Ruby*, *Node.js*, *PHP*, *React* and *Vue*, with a strong interest in data structures and algorithms as well as back-end development.
+I am a software engineer based in Hyderabad, India. Over the past **{{ 'now' | date: '%Y' | minus: 2012 }}+ years**, I have been coding primarily in *Python*, *Ruby*, *Node.js*, *PHP*, *React* and *Vue*, with a strong interest in data structures and algorithms as well as back-end development.
 
 I enjoy writing code, [listening to music](https://www.last.fm/user/thephpguy){:target="_blank"}, <span class="strikethrough">and [playing computer games](https://steamcommunity.com/id/saikiransripada){:target="_blank"}</span>.
 
