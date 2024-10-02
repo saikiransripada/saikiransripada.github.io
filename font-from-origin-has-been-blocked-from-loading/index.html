@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <title>Font from origin has been blocked from loading by Cross-Origin Resource Sharing policy | Sai Kiran Sripada</title>
+  
+
+  
+  <meta name="description" content="Custom web fonts via CDN requires CORS (Cross-Origin Resource Sharing) configuration to display fonts properly.">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://www.saikiransripada.com/font-from-origin-has-been-blocked-from-loading/">
+  <link rel="alternate" type="application/rss+xml" title="Sai Kiran Sripada" href="/feed.xml">
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">                                                                              <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">              <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">                      
+  <meta name="theme-color" content="#3f3f3f">
+</head>
+  <body>
+    <header class="site-header" role="banner">
+  <div class="wrapper">
+    <div class="site-header-float">
+    <a class="site-title with-pitch" href="/"><b>Sai Kiran</b> Sripada</a>
+    
+
+    
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+
+      <div class="trigger">
+        <ul class="nav-list ">
+
+
+
+
+
+
+  
+  <li><a class="page-link" href="/blog/">Blog</a></li>
+  
+
+
+
+
+
+  
+
+
+
+  
+  <li><a class="page-link" href="/projects/">Projects</a></li>
+  
+
+
+
+  
+
+
+
+  
+
+
+</ul>
+      </div>
+    </nav>
+    
+    </div>
+
+    <ul class="lang-selector">
+    <span class="lang-intro"></span>
+    
+    
+    
+    
+    
+    
+      
+      <li class="lang">
+        <a href="/blog/" title="Blog">Blog</a>
+      </li>
+      
+    
+    
+    
+    
+    
+      
+    
+    
+    
+      
+      <li class="lang">
+        <a href="/projects/" title="Projects">Projects</a>
+      </li>
+      
+    
+    
+    
+      
+    
+    
+    
+      
+    
+    
+    </ul>
+  </div>
+</header>
+    
+    <main class="post-content" aria-label="Content">
+    
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  
+  <header class="post-header with-thumbnail">
+  
+    
+    <img class="post-thumbnail" src="/assets/images/chris-yang-Ii0SqNV7e8I-unsplash.jpg" alt="Font from origin has been blocked from loading by Cross-Origin Resource Sharing policy"/>
+    
+    
+    <div class="wrapper without-summary">
+    
+      <h1 class="post-title" itemprop="name headline">Font from origin has been blocked from loading by Cross-Origin Resource Sharing policy</h1>
+      <p class="post-meta">
+        <time datetime="2016-02-19T17:01:27+00:00" itemprop="datePublished">
+          Feb 19, 2016
+        </time>
+        <span class="last-update">·
+          last updated on Dec 23, 2023 
+        </span>
+        
+      </p>
+      
+    </div>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Custom web fonts via CDN requires CORS (Cross-Origin Resource Sharing) configuration to display fonts properly.</p>
+
+<p>Add the below rule to your .htaccess</p>
+
+<figure class="highlight"><pre><code class="language-apache" data-lang="apache"><span class="c"># Allow access from all domains for webfonts.</span>
+<span class="p">&lt;</span><span class="nl">IfModule</span><span class="sr"> mod_headers.c</span><span class="p">&gt;
+</span>  <span class="p">&lt;</span><span class="nl">FilesMatch</span><span class="sr"> "\.(ttf|ttc|otf|eot|woff|font.css|css)$"</span><span class="p">&gt;
+</span>    <span class="nc">Header</span> <span class="ss">add</span> Access-Control-Allow-Origin "*"
+  <span class="p">&lt;/</span><span class="nl">FilesMatch</span><span class="p">&gt;
+&lt;/</span><span class="nl">IfModule</span><span class="p">&gt;</span></code></pre></figure>
+
+<p>Using a wildcard is potentially insecure as it opens the domain to JavaScript access from any domain. Instead, you can allow your domain or subdomain.</p>
+
+<figure class="highlight"><pre><code class="language-apache" data-lang="apache"><span class="nc">Header</span> <span class="ss">add</span> Access-Control-Allow-Origin "your-domain.com"</code></pre></figure>
+
+<p>When <code class="highlighter-rouge">add</code> is used, the response header will be added to the existing set of headers; Whereas with <code class="highlighter-rouge">set</code> the response header will be set, replacing any header with this name.</p>
+
+  </div>
+
+  <div class="pagination">
+    
+      <a class="prev" href="/get-a-notification-when-the-movie-tickets-are-available-on-bookmyshow/">&laquo; Get a notification when the movie tickets are available on BookMyShow</a>
+    
+    
+      <a class="next" href="/always-backup-your-database/">Always backup your database &raquo;</a>
+    
+  </div>
+  <div class="colored-block">
+  
+  
+    Did you like that post?
+  
+
+  You can suscribe to the
+  <a href="/feed.xml">RSS feed</a>
+  
+
+  
+    or follow
+    <a href="https://twitter.com/neatcoder">@neatcoder</a>
+    on Twitter
+  .
+</div>
+</article>
+
+        
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+      <ul class="footer-col footer-col-1">
+        <li>
+          <a href="/"><b>Sai Kiran</b> Sripada</a>
+        </li>
+        
+          <li>A software engineer with a strong interest in data structures, algorithms, and back-end development.</li>
+        
+      </ul>
+      
+        <span class="contact-list-title">Links</span>
+<ul class="contact-list footer-col footer-col-2">
+  
+  <li>
+    <a href="mailto:hello@saikiransripada.com" title="Email"><span class="icon icon--email"><svg viewBox="0 0 512 512" width="16px" height="16px"><path fill="#828282" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg></span> <span class="username">contact</span></span></a>
+  </li>
+  
+
+  
+
+  
+
+  
+  <li>
+    <a target="_blank" href="https://twitter.com/neatcoder" title="Twitter"><span class="icon icon--twitter"><svg viewBox="0 0 512 512" width="16px" height="16px"><path fill="#828282" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></span> <span class="username">neatcoder</span></a>
+  </li>
+  
+
+  
+  <li>
+    <a target="_blank" href="https://www.linkedin.com/in/saikiransripada" title="LinkedIn"><span class="icon icon--linkedin"><svg viewBox="0 0 448 512" width="16px" height="16px"><path fill="#828282" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></span> <span class="username">saikiransripada</span></a>
+  </li>
+  
+
+  
+  <li>
+    <a target="_blank" href="https://github.com/saikiransripada" title="Github"><span class="icon icon--github"><svg viewBox="0 0 496 512" width="16px" height="16px"><path fill="#828282" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span> <span class="username">saikiransripada</span></a>
+  </li>
+  
+
+  
+  <li>
+    <a target="_blank" href="https://www.leetcode.com/saikiransripada" title="Leetcode"><span class="icon icon--leetcode"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px"><path fill="#828282" d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg></span><span class="username">saikiransripada</span></a>
+  </li>
+  
+
+  
+
+  
+
+  
+
+  
+
+</ul>
+      
+    <div class="bottom">
+      <ul class="lang-selector">
+      <span class="lang-intro"></span>
+      
+      
+      
+      
+      
+      
+        
+        <li class="lang">
+          <a href="/blog/" title="Blog">Blog</a>
+        </li>
+        
+      
+      
+      
+      
+      
+        
+      
+      
+      
+        
+        <li class="lang">
+          <a href="/projects/" title="Projects">Projects</a>
+        </li>
+        
+      
+      
+      
+        
+      
+      
+      
+        
+      
+      
+      </ul>
+      <div class="legal">
+      © <a href="/"><b>Sai Kiran</b> Sripada</a>
+      
+      
+      
+      (2015-2024)
+     </div>
+    </div>
+  </div>
+</footer>
+    
+  </body>
+</html>
